@@ -1,14 +1,15 @@
-﻿using System;
+﻿using HotelManagement.BUS;
+using HotelManagement.DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using HotelManagement.BUS;
-using HotelManagement.DTO;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 
 namespace HotelManagement
@@ -22,7 +23,7 @@ namespace HotelManagement
             InitializeComponent();
         }
 
-        // Hiển thị toàn bộ
+        // Hiển thị toàn bộ ở bảng  
         public void ShowAllHoaDon()
         {
             DataTable dt = new DataTable();
@@ -46,23 +47,52 @@ namespace HotelManagement
             textMaNV.Text = dataGridViewHD.Rows[index].Cells["MaNV"].Value.ToString();
             string loaiHD = dataGridViewHD.Rows[index].Cells["MaLoaiHD"].Value.ToString();
 
-            //if (loaiHD.Contains("HDP")){
-            //    listHDP.Text = loaiHD;
-            //}
-            //else if (loaiHD.Contains("HDM"))
-            //{
-            //    textHDM.Text = loaiHD;
-            //}
-            //else if (loaiHD.Contains("HDDV"))
-            //{
-            ////    textHDDV.Text = loaiHD;
-            //}
-            
-            //inputNgayXuat.Value = Convert.ToDateTime(dataGridViewHD.Rows[index].Cells["NgayXuatHD"].Value);
-            //textUuDai.Text = dataGridViewHD.Rows[index].Cells["MaUD"].Value.ToString();
-            //comboTT.Text = dataGridViewHD.Rows[index].Cells["TrangThai"].Value.ToString();
+            inputNgayXuat.Value = Convert.ToDateTime(dataGridViewHD.Rows[index].Cells["NgayXuatHD"].Value);
+            textUuDai.Text = dataGridViewHD.Rows[index].Cells["MaUD"].Value.ToString();
+            comboTT.Text = dataGridViewHD.Rows[index].Cells["TrangThai"].Value.ToString();
 
-        }
+            if (e.RowIndex >= 0) // Đảm bảo người dùng đã click vào một dòng hợp lệ
+			{
+				string maHoaDon = dataGridViewHD.Rows[e.RowIndex].Cells["MaHD"].Value.ToString();
+				LoadLoaiHoaDon(maHoaDon); // Gọi hàm lọc và hiển thị dữ liệu
+			}
+		}
+		private void LoadLoaiHoaDon(string maHoaDon)
+		{
+			string connectionString = "Data Source = LAPTOP-0ILAPBDO; Initial Catalog = HotelManagement; Integrated Security = true";
+
+			using (SqlConnection conn = new SqlConnection(connectionString))
+			{
+				conn.Open();
+
+				// Lọc hóa đơn phòng
+				string queryPhong = "SELECT MaLoaiHD FROM HoaDon WHERE MaHD = @MaHD and MaLoaiHD like 'HDP%' ";
+				SqlDataAdapter daPhong = new SqlDataAdapter(queryPhong, conn);
+				daPhong.SelectCommand.Parameters.AddWithValue("@MaHD", maHoaDon);
+				DataTable dtPhong = new DataTable();
+				daPhong.Fill(dtPhong);
+				listHDP.DataSource = dtPhong;
+				listHDP.DisplayMember = "MaLoaiHD"; // Hiển thị mã phòng
+
+                // Lọc món ăn
+                string queryMon = "SELECT MaLoaiHD FROM HoaDon WHERE MaHD = @MaHD and MaLoaiHD like 'HDM%' ";
+				SqlDataAdapter daMon = new SqlDataAdapter(queryMon, conn);
+				daMon.SelectCommand.Parameters.AddWithValue("@MaHD", maHoaDon);
+				DataTable dtMon = new DataTable();
+				daMon.Fill(dtMon);
+				listHDM.DataSource = dtMon;
+				listHDM.DisplayMember = "MaLoaiHD"; // Hiển thị tên món ăn
+
+                // Lọc dịch vụ
+                string queryDichVu = "SELECT MaLoaiHD FROM HoaDon WHERE MaHD = @MaHD and MaLoaiHD like 'HDDV%' ";
+				SqlDataAdapter daDichVu = new SqlDataAdapter(queryDichVu, conn);
+				daDichVu.SelectCommand.Parameters.AddWithValue("@MaHD", maHoaDon);
+				DataTable dtDichVu = new DataTable();
+				daDichVu.Fill(dtDichVu);
+				listHDDV.DataSource = dtDichVu;
+                listHDDV.DisplayMember = "MaLoaiHD"; // Hiển thị tên dịch vụ
+			}
+		}        
 
         // Kiểm tra nhập chưa
         public bool checkData()
@@ -86,16 +116,16 @@ namespace HotelManagement
                 MessageBox.Show("Chưa nhập Mã nhân viên", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 textMaNV.Focus();
                 return false;
-            }           
+            }
 
-            //if (string.IsNullOrEmpty(listHDP.Text) && string.IsNullOrEmpty(textHDM.Text) && string.IsNullOrEmpty(textHDDV.Text))
-            //{
-            //    MessageBox.Show("Chưa nhập Mã loại hóa đơn ", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //    listHDP.Focus();
-            //    textHDM.Focus();
-            //    textHDDV.Focus();
-            //    return false;
-            //}
+            if (string.IsNullOrEmpty(listHDP.Text) && string.IsNullOrEmpty(listHDM.Text) && string.IsNullOrEmpty(listHDDV.Text))
+            {
+                MessageBox.Show("Chưa nhập Mã loại hóa đơn ", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                listHDP.Focus();
+                listHDM.Focus();
+                listHDDV.Focus();
+                return false;
+            }
 
             if (!inputNgayXuat.Checked)
             {

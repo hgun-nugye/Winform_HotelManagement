@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using HotelManagement.BUS;
 using HotelManagement.DTO;
+using HotelManagement.GUII;
 namespace HotelManagement
 {
     public partial class bangNV : Form
@@ -269,5 +270,19 @@ namespace HotelManagement
             new Dashboard().Show();
 
         }
-    }
+
+		private void lichLam_Click(object sender, EventArgs e)
+		{
+            this.Hide();
+            var ll = new LichLamForm();
+            ll.Show();
+		}
+
+		private void luong_Click(object sender, EventArgs e)
+		{
+			this.Hide();
+			var lg = new LuongForm();
+			lg.Show();
+		}
+	}
 }

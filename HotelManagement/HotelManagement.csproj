@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4631529F-89B9-428F-BC5F-B2DE96D3B582}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>HotelManagement</RootNamespace>
+    <AssemblyName>HotelManagement</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BUS\LichLamBUS.cs" />
+    <Compile Include="BUS\LuongBUS.cs" />
+    <Compile Include="BUS\NhanVienBUS.cs" />
+    <Compile Include="BUS\PhongBUS.cs" />
+    <Compile Include="BUS\UuDaiBUS.cs" />
+    <Compile Include="DAO\DaoInterface.cs" />
+    <Compile Include="DAO\LichLamDAO.cs" />
+    <Compile Include="DAO\LuongDAO.cs" />
+    <Compile Include="DAO\NhanVienDAO.cs" />
+    <Compile Include="DAO\PhongDAO.cs" />
+    <Compile Include="DAO\UuDaiDAO.cs" />
+    <Compile Include="DataConnection.cs" />
+    <Compile Include="DTO\LichLamDTO.cs" />
+    <Compile Include="DTO\LuongDTO.cs" />
+    <Compile Include="DTO\NhanVienDTO.cs" />
+    <Compile Include="DTO\PhongDTO.cs" />
+    <Compile Include="DTO\UuDaiDTO.cs" />
+    <Compile Include="GUII\LichLamGUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUII\LichLamGUI.Designer.cs">
+      <DependentUpon>LichLamGUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUII\LuongGUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUII\LuongGUI.Designer.cs">
+      <DependentUpon>LuongGUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUII\PhongGUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUII\PhongGUI.Designer.cs">
+      <DependentUpon>PhongGUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUII\UuDaiGUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUII\UuDaiGUI.Designer.cs">
+      <DependentUpon>UuDaiGUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUII\NhanVienGUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUII\NhanVienGUI.Designer.cs">
+      <DependentUpon>NhanVienGUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GUII\LichLamGUI.resx">
+      <DependentUpon>LichLamGUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUII\LuongGUI.resx">
+      <DependentUpon>LuongGUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUII\PhongGUI.resx">
+      <DependentUpon>PhongGUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUII\UuDaiGUI.resx">
+      <DependentUpon>UuDaiGUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUII\NhanVienGUI.resx">
+      <DependentUpon>NhanVienGUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

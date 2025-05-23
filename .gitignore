@@ -361,3 +361,6 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/PhongForm.cs
+/PhongForm.Designer.cs
+/PhongForm.resx
