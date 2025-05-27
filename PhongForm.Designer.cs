@@ -416,9 +416,7 @@
 			this.comboTT.FormattingEnabled = true;
 			this.comboTT.Items.AddRange(new object[] {
             "Trống",
-            "Đã đặt",
-            "Đang dọn dẹp",
-            "Đang sử dụng"});
+            "Đang dọn dẹp"});
 			this.comboTT.Location = new System.Drawing.Point(223, 245);
 			this.comboTT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.comboTT.Name = "comboTT";

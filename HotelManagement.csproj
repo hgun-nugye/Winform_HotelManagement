@@ -80,6 +80,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddHDDV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddHDDV.Designer.cs">
+      <DependentUpon>AddHDDV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddHDM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddHDM.Designer.cs">
+      <DependentUpon>AddHDM.cs</DependentUpon>
+    </Compile>
     <Compile Include="BUS\DichVuBUS.cs" />
     <Compile Include="BUS\HoaDonBUS.cs" />
     <Compile Include="BUS\HoaDonDVBUS.cs" />
@@ -226,6 +238,12 @@
     <Compile Include="UuDai.Designer.cs">
       <DependentUpon>UuDai.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddHDDV.resx">
+      <DependentUpon>AddHDDV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddHDM.resx">
+      <DependentUpon>AddHDM.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Checkin.resx">
       <DependentUpon>Checkin.cs</DependentUpon>
     </EmbeddedResource>

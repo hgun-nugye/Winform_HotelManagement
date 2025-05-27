@@ -53,13 +53,13 @@
 			this.DiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.QuocTich = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.Email_KH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.groupGT = new System.Windows.Forms.GroupBox();
-			this.radioNu = new System.Windows.Forms.RadioButton();
-			this.radioNam = new System.Windows.Forms.RadioButton();
 			this.delete = new System.Windows.Forms.Button();
 			this.update = new System.Windows.Forms.Button();
 			this.back = new System.Windows.Forms.Button();
 			this.label14 = new System.Windows.Forms.Label();
+			this.groupGT = new System.Windows.Forms.GroupBox();
+			this.radioNu = new System.Windows.Forms.RadioButton();
+			this.radioNam = new System.Windows.Forms.RadioButton();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridViewKH)).BeginInit();
 			this.groupGT.SuspendLayout();
 			this.SuspendLayout();
@@ -80,7 +80,7 @@
 			// 
 			this.textEmail_KH.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.textEmail_KH.Location = new System.Drawing.Point(621, 202);
-			this.textEmail_KH.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.textEmail_KH.Margin = new System.Windows.Forms.Padding(4);
 			this.textEmail_KH.Multiline = true;
 			this.textEmail_KH.Name = "textEmail_KH";
 			this.textEmail_KH.Size = new System.Drawing.Size(295, 40);
@@ -101,7 +101,7 @@
 			// 
 			this.textQuocTich.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.textQuocTich.Location = new System.Drawing.Point(621, 157);
-			this.textQuocTich.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.textQuocTich.Margin = new System.Windows.Forms.Padding(4);
 			this.textQuocTich.Multiline = true;
 			this.textQuocTich.Name = "textQuocTich";
 			this.textQuocTich.Size = new System.Drawing.Size(295, 38);
@@ -122,7 +122,7 @@
 			// 
 			this.textDiaChi.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.textDiaChi.Location = new System.Drawing.Point(621, 113);
-			this.textDiaChi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.textDiaChi.Margin = new System.Windows.Forms.Padding(4);
 			this.textDiaChi.Multiline = true;
 			this.textDiaChi.Name = "textDiaChi";
 			this.textDiaChi.Size = new System.Drawing.Size(295, 37);
@@ -154,7 +154,7 @@
 			// 
 			this.textHoTen.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.textHoTen.Location = new System.Drawing.Point(221, 156);
-			this.textHoTen.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.textHoTen.Margin = new System.Windows.Forms.Padding(4);
 			this.textHoTen.Multiline = true;
 			this.textHoTen.Name = "textHoTen";
 			this.textHoTen.Size = new System.Drawing.Size(203, 40);
@@ -175,7 +175,7 @@
 			// 
 			this.textSDT_KH.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.textSDT_KH.Location = new System.Drawing.Point(668, 66);
-			this.textSDT_KH.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.textSDT_KH.Margin = new System.Windows.Forms.Padding(4);
 			this.textSDT_KH.Multiline = true;
 			this.textSDT_KH.Name = "textSDT_KH";
 			this.textSDT_KH.Size = new System.Drawing.Size(248, 38);
@@ -196,7 +196,7 @@
 			// 
 			this.textCCCD_KH.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.textCCCD_KH.Location = new System.Drawing.Point(221, 114);
-			this.textCCCD_KH.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.textCCCD_KH.Margin = new System.Windows.Forms.Padding(4);
 			this.textCCCD_KH.Multiline = true;
 			this.textCCCD_KH.Name = "textCCCD_KH";
 			this.textCCCD_KH.Size = new System.Drawing.Size(203, 37);
@@ -217,7 +217,7 @@
 			// 
 			this.textMaKH.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.textMaKH.Location = new System.Drawing.Point(221, 66);
-			this.textMaKH.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.textMaKH.Margin = new System.Windows.Forms.Padding(4);
 			this.textMaKH.Multiline = true;
 			this.textMaKH.Name = "textMaKH";
 			this.textMaKH.Size = new System.Drawing.Size(203, 41);
@@ -319,44 +319,6 @@
 			this.Email_KH.Name = "Email_KH";
 			this.Email_KH.Width = 150;
 			// 
-			// groupGT
-			// 
-			this.groupGT.Controls.Add(this.radioNu);
-			this.groupGT.Controls.Add(this.radioNam);
-			this.groupGT.Location = new System.Drawing.Point(221, 210);
-			this.groupGT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-			this.groupGT.Name = "groupGT";
-			this.groupGT.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-			this.groupGT.Size = new System.Drawing.Size(203, 32);
-			this.groupGT.TabIndex = 42;
-			this.groupGT.TabStop = false;
-			// 
-			// radioNu
-			// 
-			this.radioNu.AutoSize = true;
-			this.radioNu.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.radioNu.Location = new System.Drawing.Point(111, 60);
-			this.radioNu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-			this.radioNu.Name = "radioNu";
-			this.radioNu.Size = new System.Drawing.Size(49, 21);
-			this.radioNu.TabIndex = 34;
-			this.radioNu.TabStop = true;
-			this.radioNu.Text = "Nữ";
-			this.radioNu.UseVisualStyleBackColor = true;
-			// 
-			// radioNam
-			// 
-			this.radioNam.AutoSize = true;
-			this.radioNam.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.radioNam.Location = new System.Drawing.Point(4, 60);
-			this.radioNam.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-			this.radioNam.Name = "radioNam";
-			this.radioNam.Size = new System.Drawing.Size(61, 21);
-			this.radioNam.TabIndex = 33;
-			this.radioNam.TabStop = true;
-			this.radioNam.Text = "Nam";
-			this.radioNam.UseVisualStyleBackColor = true;
-			// 
 			// delete
 			// 
 			this.delete.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
@@ -407,17 +369,57 @@
 			this.label14.TabIndex = 71;
 			this.label14.Text = "DANH SÁCH KHÁCH HÀNG";
 			// 
+			// groupGT
+			// 
+			this.groupGT.Controls.Add(this.radioNu);
+			this.groupGT.Controls.Add(this.radioNam);
+			this.groupGT.Location = new System.Drawing.Point(221, 210);
+			this.groupGT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+			this.groupGT.Name = "groupGT";
+			this.groupGT.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+			this.groupGT.Size = new System.Drawing.Size(249, 32);
+			this.groupGT.TabIndex = 110;
+			this.groupGT.TabStop = false;
+			// 
+			// radioNu
+			// 
+			this.radioNu.AutoSize = true;
+			this.radioNu.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
+			this.radioNu.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+			this.radioNu.Location = new System.Drawing.Point(111, 6);
+			this.radioNu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+			this.radioNu.Name = "radioNu";
+			this.radioNu.Size = new System.Drawing.Size(49, 21);
+			this.radioNu.TabIndex = 34;
+			this.radioNu.TabStop = true;
+			this.radioNu.Text = "Nữ";
+			this.radioNu.UseVisualStyleBackColor = true;
+			// 
+			// radioNam
+			// 
+			this.radioNam.AutoSize = true;
+			this.radioNam.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
+			this.radioNam.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+			this.radioNam.Location = new System.Drawing.Point(4, 6);
+			this.radioNam.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+			this.radioNam.Name = "radioNam";
+			this.radioNam.Size = new System.Drawing.Size(61, 21);
+			this.radioNam.TabIndex = 33;
+			this.radioNam.TabStop = true;
+			this.radioNam.Text = "Nam";
+			this.radioNam.UseVisualStyleBackColor = true;
+			// 
 			// bangKhachHang
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.Azure;
 			this.ClientSize = new System.Drawing.Size(958, 588);
+			this.Controls.Add(this.groupGT);
 			this.Controls.Add(this.label14);
 			this.Controls.Add(this.back);
 			this.Controls.Add(this.update);
 			this.Controls.Add(this.delete);
-			this.Controls.Add(this.groupGT);
 			this.Controls.Add(this.inputFind);
 			this.Controls.Add(this.textEmail_KH);
 			this.Controls.Add(this.label8);
@@ -469,9 +471,6 @@
 		private System.Windows.Forms.TextBox textMaKH;
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.DataGridView dataGridViewKH;
-		private System.Windows.Forms.GroupBox groupGT;
-		private System.Windows.Forms.RadioButton radioNu;
-		private System.Windows.Forms.RadioButton radioNam;
 		private System.Windows.Forms.DataGridViewTextBoxColumn MaKH;
 		private System.Windows.Forms.DataGridViewTextBoxColumn CCCD;
 		private System.Windows.Forms.DataGridViewTextBoxColumn SDT_KH;
@@ -484,5 +483,8 @@
 		private System.Windows.Forms.Button update;
 		private System.Windows.Forms.Button back;
 		private System.Windows.Forms.Label label14;
+		private System.Windows.Forms.GroupBox groupGT;
+		private System.Windows.Forms.RadioButton radioNu;
+		private System.Windows.Forms.RadioButton radioNam;
 	}
 }

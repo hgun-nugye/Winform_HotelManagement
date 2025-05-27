@@ -85,5 +85,19 @@ namespace HotelManagement
 			Dashboard dashboard = new Dashboard();
 			dashboard.Show();
 		}
+
+		private void addMon_Click(object sender, EventArgs e)
+		{
+			this.Hide();
+			var addMon = new AddHDM(maPhong.Text, textCCCD.Text);
+			addMon.Show();
+		}
+
+		private void addDV_Click(object sender, EventArgs e)
+		{
+			this.Hide();
+			var addDV = new AddHDDV(maPhong.Text, textCCCD.Text);
+			addDV.Show();
+		}
 	}
 }

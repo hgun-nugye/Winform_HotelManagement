@@ -42,6 +42,8 @@
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.back = new System.Windows.Forms.Button();
 			this.maPhong = new System.Windows.Forms.Button();
+			this.addMon = new System.Windows.Forms.Button();
+			this.addDV = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -165,7 +167,7 @@
 			this.back.Name = "back";
 			this.back.Size = new System.Drawing.Size(91, 42);
 			this.back.TabIndex = 62;
-			this.back.Text = "BACK";
+			this.back.Text = "Back";
 			this.back.UseVisualStyleBackColor = false;
 			this.back.Click += new System.EventHandler(this.back_Click);
 			// 
@@ -182,6 +184,32 @@
 			this.maPhong.Text = "Mã phòng";
 			this.maPhong.UseVisualStyleBackColor = false;
 			// 
+			// addMon
+			// 
+			this.addMon.BackColor = System.Drawing.Color.LightSkyBlue;
+			this.addMon.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.addMon.Location = new System.Drawing.Point(505, 347);
+			this.addMon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+			this.addMon.Name = "addMon";
+			this.addMon.Size = new System.Drawing.Size(121, 42);
+			this.addMon.TabIndex = 64;
+			this.addMon.Text = "Thêm Món";
+			this.addMon.UseVisualStyleBackColor = false;
+			this.addMon.Click += new System.EventHandler(this.addMon_Click);
+			// 
+			// addDV
+			// 
+			this.addDV.BackColor = System.Drawing.Color.LightSkyBlue;
+			this.addDV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.addDV.Location = new System.Drawing.Point(650, 347);
+			this.addDV.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+			this.addDV.Name = "addDV";
+			this.addDV.Size = new System.Drawing.Size(157, 42);
+			this.addDV.TabIndex = 65;
+			this.addDV.Text = "Thêm Dịch vụ";
+			this.addDV.UseVisualStyleBackColor = false;
+			this.addDV.Click += new System.EventHandler(this.addDV_Click);
+			// 
 			// PhongInfo
 			// 
 			this.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuPopup;
@@ -189,6 +217,8 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.Azure;
 			this.ClientSize = new System.Drawing.Size(958, 412);
+			this.Controls.Add(this.addDV);
+			this.Controls.Add(this.addMon);
 			this.Controls.Add(this.back);
 			this.Controls.Add(this.pictureBox1);
 			this.Controls.Add(this.tongTien);
@@ -228,5 +258,7 @@
 		private System.Windows.Forms.PictureBox pictureBox1;
 		private System.Windows.Forms.Button back;
 		private System.Windows.Forms.Button maPhong;
+		private System.Windows.Forms.Button addMon;
+		private System.Windows.Forms.Button addDV;
 	}
 }

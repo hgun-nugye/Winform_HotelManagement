@@ -103,6 +103,7 @@
             this.MaSoThueCaNhan});
 			resources.ApplyResources(this.dataGridViewNV, "dataGridViewNV");
 			this.dataGridViewNV.Name = "dataGridViewNV";
+			this.dataGridViewNV.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
 			this.dataGridViewNV.RowTemplate.Height = 28;
 			this.dataGridViewNV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewNV_CellClick);
 			// 
@@ -331,6 +332,7 @@
 			// update
 			// 
 			this.update.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+			this.update.DialogResult = System.Windows.Forms.DialogResult.Cancel;
 			resources.ApplyResources(this.update, "update");
 			this.update.Name = "update";
 			this.update.UseVisualStyleBackColor = false;
