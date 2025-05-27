@@ -82,9 +82,10 @@
 			this.panel1.Controls.Add(this.service);
 			this.panel1.Controls.Add(this.label1);
 			this.panel1.Controls.Add(this.menuHD);
-			this.panel1.Location = new System.Drawing.Point(4, 4);
+			this.panel1.Location = new System.Drawing.Point(0, 0);
+			this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(310, 678);
+			this.panel1.Size = new System.Drawing.Size(280, 545);
 			this.panel1.TabIndex = 0;
 			// 
 			// customer
@@ -93,9 +94,9 @@
 			this.customer.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.customer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.customer.ForeColor = System.Drawing.Color.MidnightBlue;
-			this.customer.Location = new System.Drawing.Point(26, 291);
+			this.customer.Location = new System.Drawing.Point(23, 233);
 			this.customer.Name = "customer";
-			this.customer.Size = new System.Drawing.Size(253, 29);
+			this.customer.Size = new System.Drawing.Size(225, 23);
 			this.customer.TabIndex = 11;
 			this.customer.Text = "▶  KHÁCH HÀNG";
 			this.customer.UseMnemonic = false;
@@ -106,10 +107,10 @@
 			this.checkout.CausesValidation = false;
 			this.checkout.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.checkout.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.checkout.ForeColor = System.Drawing.Color.MidnightBlue;
-			this.checkout.Location = new System.Drawing.Point(26, 392);
+			this.checkout.ForeColor = System.Drawing.Color.Crimson;
+			this.checkout.Location = new System.Drawing.Point(23, 314);
 			this.checkout.Name = "checkout";
-			this.checkout.Size = new System.Drawing.Size(253, 29);
+			this.checkout.Size = new System.Drawing.Size(225, 23);
 			this.checkout.TabIndex = 10;
 			this.checkout.Text = "▶  CHECK OUT";
 			this.checkout.UseMnemonic = false;
@@ -120,10 +121,10 @@
 			this.checkin.CausesValidation = false;
 			this.checkin.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.checkin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.checkin.ForeColor = System.Drawing.Color.MidnightBlue;
-			this.checkin.Location = new System.Drawing.Point(26, 341);
+			this.checkin.ForeColor = System.Drawing.Color.Crimson;
+			this.checkin.Location = new System.Drawing.Point(23, 273);
 			this.checkin.Name = "checkin";
-			this.checkin.Size = new System.Drawing.Size(253, 29);
+			this.checkin.Size = new System.Drawing.Size(225, 23);
 			this.checkin.TabIndex = 9;
 			this.checkin.Text = "▶  CHECK IN";
 			this.checkin.UseMnemonic = false;
@@ -135,9 +136,9 @@
 			this.employee.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.employee.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.employee.ForeColor = System.Drawing.Color.MidnightBlue;
-			this.employee.Location = new System.Drawing.Point(26, 240);
+			this.employee.Location = new System.Drawing.Point(23, 192);
 			this.employee.Name = "employee";
-			this.employee.Size = new System.Drawing.Size(253, 29);
+			this.employee.Size = new System.Drawing.Size(225, 23);
 			this.employee.TabIndex = 8;
 			this.employee.Text = "▶  NHÂN VIÊN";
 			this.employee.UseMnemonic = false;
@@ -149,9 +150,9 @@
 			this.room.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.room.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.room.ForeColor = System.Drawing.Color.MediumBlue;
-			this.room.Location = new System.Drawing.Point(26, 68);
+			this.room.Location = new System.Drawing.Point(23, 54);
 			this.room.Name = "room";
-			this.room.Size = new System.Drawing.Size(242, 46);
+			this.room.Size = new System.Drawing.Size(215, 37);
 			this.room.TabIndex = 6;
 			this.room.Text = "▶  PHÒNG";
 			this.room.UseMnemonic = false;
@@ -161,9 +162,10 @@
 			// 
 			this.report.BackColor = System.Drawing.Color.LightSkyBlue;
 			this.report.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.report.Location = new System.Drawing.Point(46, 591);
+			this.report.Location = new System.Drawing.Point(41, 473);
+			this.report.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.report.Name = "report";
-			this.report.Size = new System.Drawing.Size(205, 58);
+			this.report.Size = new System.Drawing.Size(182, 46);
 			this.report.TabIndex = 5;
 			this.report.Text = "BÁO CÁO";
 			this.report.UseVisualStyleBackColor = false;
@@ -172,9 +174,10 @@
 			// 
 			this.statis.BackColor = System.Drawing.Color.LightSkyBlue;
 			this.statis.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.statis.Location = new System.Drawing.Point(46, 518);
+			this.statis.Location = new System.Drawing.Point(41, 414);
+			this.statis.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.statis.Name = "statis";
-			this.statis.Size = new System.Drawing.Size(205, 58);
+			this.statis.Size = new System.Drawing.Size(182, 46);
 			this.statis.TabIndex = 4;
 			this.statis.Text = "THỐNG KÊ";
 			this.statis.UseVisualStyleBackColor = false;
@@ -185,9 +188,9 @@
 			this.dish.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.dish.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.dish.ForeColor = System.Drawing.Color.MediumBlue;
-			this.dish.Location = new System.Drawing.Point(26, 127);
+			this.dish.Location = new System.Drawing.Point(23, 102);
 			this.dish.Name = "dish";
-			this.dish.Size = new System.Drawing.Size(242, 29);
+			this.dish.Size = new System.Drawing.Size(215, 23);
 			this.dish.TabIndex = 3;
 			this.dish.Text = "▶  MÓN ĂN";
 			this.dish.UseMnemonic = false;
@@ -199,9 +202,9 @@
 			this.service.Cursor = System.Windows.Forms.Cursors.Hand;
 			this.service.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.service.ForeColor = System.Drawing.Color.MediumBlue;
-			this.service.Location = new System.Drawing.Point(26, 183);
+			this.service.Location = new System.Drawing.Point(23, 146);
 			this.service.Name = "service";
-			this.service.Size = new System.Drawing.Size(242, 46);
+			this.service.Size = new System.Drawing.Size(215, 37);
 			this.service.TabIndex = 2;
 			this.service.Text = "▶  DỊCH VỤ";
 			this.service.UseMnemonic = false;
@@ -212,27 +215,26 @@
 			this.label1.AutoSize = true;
 			this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label1.ForeColor = System.Drawing.Color.Goldenrod;
-			this.label1.Location = new System.Drawing.Point(25, 16);
+			this.label1.Location = new System.Drawing.Point(22, 13);
 			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(254, 32);
+			this.label1.Size = new System.Drawing.Size(219, 29);
 			this.label1.TabIndex = 0;
 			this.label1.Text = "HOTEL GROUP 1";
 			// 
 			// menuHD
 			// 
-			this.menuHD.BackColor = System.Drawing.Color.Azure;
+			this.menuHD.BackColor = System.Drawing.Color.PowderBlue;
 			this.menuHD.Dock = System.Windows.Forms.DockStyle.None;
 			this.menuHD.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.menuHD.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
 			this.menuHD.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible;
 			this.menuHD.ImageScalingSize = new System.Drawing.Size(0, 0);
 			this.menuHD.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripComboBoxHD});
-			this.menuHD.Location = new System.Drawing.Point(17, 445);
-			this.menuHD.MaximumSize = new System.Drawing.Size(380, 45);
+			this.menuHD.Location = new System.Drawing.Point(15, 356);
+			this.menuHD.MaximumSize = new System.Drawing.Size(338, 36);
 			this.menuHD.Name = "menuHD";
-			this.menuHD.Padding = new System.Windows.Forms.Padding(4, 3, 3, 3);
-			this.menuHD.Size = new System.Drawing.Size(380, 40);
+			this.menuHD.Padding = new System.Windows.Forms.Padding(4, 2, 3, 2);
+			this.menuHD.Size = new System.Drawing.Size(217, 34);
 			this.menuHD.TabIndex = 0;
 			this.menuHD.Text = "▶ HÓA ĐƠN";
 			// 
@@ -241,11 +243,11 @@
 			this.toolStripComboBoxHD.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuBar;
 			this.toolStripComboBoxHD.AutoCompleteCustomSource.AddRange(new string[] {
             "▶  HÓA ĐƠN"});
-			this.toolStripComboBoxHD.BackColor = System.Drawing.Color.Azure;
-			this.toolStripComboBoxHD.DropDownHeight = 120;
+			this.toolStripComboBoxHD.BackColor = System.Drawing.Color.AliceBlue;
+			this.toolStripComboBoxHD.DropDownHeight = 200;
 			this.toolStripComboBoxHD.DropDownWidth = 200;
 			this.toolStripComboBoxHD.Font = new System.Drawing.Font("MS Reference Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.toolStripComboBoxHD.ForeColor = System.Drawing.Color.MidnightBlue;
+			this.toolStripComboBoxHD.ForeColor = System.Drawing.Color.RoyalBlue;
 			this.toolStripComboBoxHD.IntegralHeight = false;
 			this.toolStripComboBoxHD.Items.AddRange(new object[] {
             "HÓA ĐƠN PHÒNG",
@@ -254,7 +256,7 @@
             "TỔNG HÓA ĐƠN"});
 			this.toolStripComboBoxHD.Margin = new System.Windows.Forms.Padding(0);
 			this.toolStripComboBoxHD.Name = "toolStripComboBoxHD";
-			this.toolStripComboBoxHD.Size = new System.Drawing.Size(200, 34);
+			this.toolStripComboBoxHD.Size = new System.Drawing.Size(200, 30);
 			this.toolStripComboBoxHD.Text = "▶ HÓA ĐƠN";
 			this.toolStripComboBoxHD.SelectedIndexChanged += new System.EventHandler(this.toolStripComboBoxHD_Click);
 			// 
@@ -262,9 +264,10 @@
 			// 
 			this.P101.BackColor = System.Drawing.Color.LightSkyBlue;
 			this.P101.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.P101.Location = new System.Drawing.Point(48, 36);
+			this.P101.Location = new System.Drawing.Point(43, 29);
+			this.P101.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.P101.Name = "P101";
-			this.P101.Size = new System.Drawing.Size(110, 65);
+			this.P101.Size = new System.Drawing.Size(98, 52);
 			this.P101.TabIndex = 6;
 			this.P101.Text = "101";
 			this.P101.UseVisualStyleBackColor = false;
@@ -274,9 +277,10 @@
 			// 
 			this.P102.BackColor = System.Drawing.Color.LightSkyBlue;
 			this.P102.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.P102.Location = new System.Drawing.Point(233, 36);
+			this.P102.Location = new System.Drawing.Point(207, 29);
+			this.P102.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.P102.Name = "P102";
-			this.P102.Size = new System.Drawing.Size(110, 65);
+			this.P102.Size = new System.Drawing.Size(98, 52);
 			this.P102.TabIndex = 7;
 			this.P102.Text = "102";
 			this.P102.UseVisualStyleBackColor = false;
@@ -286,9 +290,10 @@
 			// 
 			this.P104.BackColor = System.Drawing.Color.LightSkyBlue;
 			this.P104.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.P104.Location = new System.Drawing.Point(597, 36);
+			this.P104.Location = new System.Drawing.Point(531, 29);
+			this.P104.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.P104.Name = "P104";
-			this.P104.Size = new System.Drawing.Size(110, 65);
+			this.P104.Size = new System.Drawing.Size(98, 52);
 			this.P104.TabIndex = 9;
 			this.P104.Text = "104";
 			this.P104.UseVisualStyleBackColor = false;
@@ -298,9 +303,10 @@
 			// 
 			this.P103.BackColor = System.Drawing.Color.LightSkyBlue;
 			this.P103.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.P103.Location = new System.Drawing.Point(412, 36);
+			this.P103.Location = new System.Drawing.Point(366, 29);
+			this.P103.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.P103.Name = "P103";
-			this.P103.Size = new System.Drawing.Size(110, 65);
+			this.P103.Size = new System.Drawing.Size(98, 52);
 			this.P103.TabIndex = 8;
 			this.P103.Text = "103";
 			this.P103.UseVisualStyleBackColor = false;
@@ -310,9 +316,10 @@
 			// 
 			this.P108.BackColor = System.Drawing.Color.LightSkyBlue;
 			this.P108.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.P108.Location = new System.Drawing.Point(597, 154);
+			this.P108.Location = new System.Drawing.Point(531, 123);
+			this.P108.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.P108.Name = "P108";
-			this.P108.Size = new System.Drawing.Size(110, 65);
+			this.P108.Size = new System.Drawing.Size(98, 52);
 			this.P108.TabIndex = 13;
 			this.P108.Text = "108";
 			this.P108.UseVisualStyleBackColor = false;
@@ -322,9 +329,10 @@
 			// 
 			this.P107.BackColor = System.Drawing.Color.LightSkyBlue;
 			this.P107.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.P107.Location = new System.Drawing.Point(412, 154);
+			this.P107.Location = new System.Drawing.Point(366, 123);
+			this.P107.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.P107.Name = "P107";
-			this.P107.Size = new System.Drawing.Size(110, 65);
+			this.P107.Size = new System.Drawing.Size(98, 52);
 			this.P107.TabIndex = 12;
 			this.P107.Text = "107";
 			this.P107.UseVisualStyleBackColor = false;
@@ -334,9 +342,10 @@
 			// 
 			this.P106.BackColor = System.Drawing.Color.LightSkyBlue;
 			this.P106.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.P106.Location = new System.Drawing.Point(233, 154);
+			this.P106.Location = new System.Drawing.Point(207, 123);
+			this.P106.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.P106.Name = "P106";
-			this.P106.Size = new System.Drawing.Size(110, 65);
+			this.P106.Size = new System.Drawing.Size(98, 52);
 			this.P106.TabIndex = 11;
 			this.P106.Text = "106";
 			this.P106.UseVisualStyleBackColor = false;
@@ -346,9 +355,10 @@
 			// 
 			this.P105.BackColor = System.Drawing.Color.LightSkyBlue;
 			this.P105.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.P105.Location = new System.Drawing.Point(48, 154);
+			this.P105.Location = new System.Drawing.Point(43, 123);
+			this.P105.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.P105.Name = "P105";
-			this.P105.Size = new System.Drawing.Size(110, 65);
+			this.P105.Size = new System.Drawing.Size(98, 52);
 			this.P105.TabIndex = 10;
 			this.P105.Text = "105";
 			this.P105.UseVisualStyleBackColor = false;
@@ -358,9 +368,10 @@
 			// 
 			this.P202.BackColor = System.Drawing.Color.LightSkyBlue;
 			this.P202.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.P202.Location = new System.Drawing.Point(597, 276);
+			this.P202.Location = new System.Drawing.Point(531, 221);
+			this.P202.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.P202.Name = "P202";
-			this.P202.Size = new System.Drawing.Size(110, 65);
+			this.P202.Size = new System.Drawing.Size(98, 52);
 			this.P202.TabIndex = 17;
 			this.P202.Text = "202";
 			this.P202.UseVisualStyleBackColor = false;
@@ -370,9 +381,10 @@
 			// 
 			this.P201.BackColor = System.Drawing.Color.LightSkyBlue;
 			this.P201.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.P201.Location = new System.Drawing.Point(412, 276);
+			this.P201.Location = new System.Drawing.Point(366, 221);
+			this.P201.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.P201.Name = "P201";
-			this.P201.Size = new System.Drawing.Size(110, 65);
+			this.P201.Size = new System.Drawing.Size(98, 52);
 			this.P201.TabIndex = 16;
 			this.P201.Text = "201";
 			this.P201.UseVisualStyleBackColor = false;
@@ -382,9 +394,10 @@
 			// 
 			this.P110.BackColor = System.Drawing.Color.LightSkyBlue;
 			this.P110.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.P110.Location = new System.Drawing.Point(233, 276);
+			this.P110.Location = new System.Drawing.Point(207, 221);
+			this.P110.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.P110.Name = "P110";
-			this.P110.Size = new System.Drawing.Size(110, 65);
+			this.P110.Size = new System.Drawing.Size(98, 52);
 			this.P110.TabIndex = 15;
 			this.P110.Text = "110";
 			this.P110.UseVisualStyleBackColor = false;
@@ -394,9 +407,10 @@
 			// 
 			this.P109.BackColor = System.Drawing.Color.LightSkyBlue;
 			this.P109.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.P109.Location = new System.Drawing.Point(48, 276);
+			this.P109.Location = new System.Drawing.Point(43, 221);
+			this.P109.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.P109.Name = "P109";
-			this.P109.Size = new System.Drawing.Size(110, 65);
+			this.P109.Size = new System.Drawing.Size(98, 52);
 			this.P109.TabIndex = 14;
 			this.P109.Text = "109";
 			this.P109.UseVisualStyleBackColor = false;
@@ -406,9 +420,10 @@
 			// 
 			this.P206.BackColor = System.Drawing.Color.LightSkyBlue;
 			this.P206.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.P206.Location = new System.Drawing.Point(597, 395);
+			this.P206.Location = new System.Drawing.Point(531, 316);
+			this.P206.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.P206.Name = "P206";
-			this.P206.Size = new System.Drawing.Size(110, 65);
+			this.P206.Size = new System.Drawing.Size(98, 52);
 			this.P206.TabIndex = 21;
 			this.P206.Text = "206";
 			this.P206.UseVisualStyleBackColor = false;
@@ -418,9 +433,10 @@
 			// 
 			this.P205.BackColor = System.Drawing.Color.LightSkyBlue;
 			this.P205.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.P205.Location = new System.Drawing.Point(412, 395);
+			this.P205.Location = new System.Drawing.Point(366, 316);
+			this.P205.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.P205.Name = "P205";
-			this.P205.Size = new System.Drawing.Size(110, 65);
+			this.P205.Size = new System.Drawing.Size(98, 52);
 			this.P205.TabIndex = 20;
 			this.P205.Text = "205";
 			this.P205.UseVisualStyleBackColor = false;
@@ -430,9 +446,10 @@
 			// 
 			this.P204.BackColor = System.Drawing.Color.LightSkyBlue;
 			this.P204.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.P204.Location = new System.Drawing.Point(233, 395);
+			this.P204.Location = new System.Drawing.Point(207, 316);
+			this.P204.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.P204.Name = "P204";
-			this.P204.Size = new System.Drawing.Size(110, 65);
+			this.P204.Size = new System.Drawing.Size(98, 52);
 			this.P204.TabIndex = 19;
 			this.P204.Text = "204";
 			this.P204.UseVisualStyleBackColor = false;
@@ -442,9 +459,10 @@
 			// 
 			this.P203.BackColor = System.Drawing.Color.LightSkyBlue;
 			this.P203.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.P203.Location = new System.Drawing.Point(48, 395);
+			this.P203.Location = new System.Drawing.Point(43, 316);
+			this.P203.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.P203.Name = "P203";
-			this.P203.Size = new System.Drawing.Size(110, 65);
+			this.P203.Size = new System.Drawing.Size(98, 52);
 			this.P203.TabIndex = 18;
 			this.P203.Text = "203";
 			this.P203.UseVisualStyleBackColor = false;
@@ -454,9 +472,10 @@
 			// 
 			this.P210.BackColor = System.Drawing.Color.LightSkyBlue;
 			this.P210.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.P210.Location = new System.Drawing.Point(597, 514);
+			this.P210.Location = new System.Drawing.Point(531, 411);
+			this.P210.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.P210.Name = "P210";
-			this.P210.Size = new System.Drawing.Size(110, 65);
+			this.P210.Size = new System.Drawing.Size(98, 52);
 			this.P210.TabIndex = 25;
 			this.P210.Text = "210";
 			this.P210.UseVisualStyleBackColor = false;
@@ -466,9 +485,10 @@
 			// 
 			this.P209.BackColor = System.Drawing.Color.LightSkyBlue;
 			this.P209.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.P209.Location = new System.Drawing.Point(412, 514);
+			this.P209.Location = new System.Drawing.Point(366, 411);
+			this.P209.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.P209.Name = "P209";
-			this.P209.Size = new System.Drawing.Size(110, 65);
+			this.P209.Size = new System.Drawing.Size(98, 52);
 			this.P209.TabIndex = 24;
 			this.P209.Text = "209";
 			this.P209.UseVisualStyleBackColor = false;
@@ -478,9 +498,10 @@
 			// 
 			this.P208.BackColor = System.Drawing.Color.LightSkyBlue;
 			this.P208.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.P208.Location = new System.Drawing.Point(233, 514);
+			this.P208.Location = new System.Drawing.Point(207, 411);
+			this.P208.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.P208.Name = "P208";
-			this.P208.Size = new System.Drawing.Size(110, 65);
+			this.P208.Size = new System.Drawing.Size(98, 52);
 			this.P208.TabIndex = 23;
 			this.P208.Text = "208";
 			this.P208.UseVisualStyleBackColor = false;
@@ -490,9 +511,10 @@
 			// 
 			this.P207.BackColor = System.Drawing.Color.LightSkyBlue;
 			this.P207.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.P207.Location = new System.Drawing.Point(48, 514);
+			this.P207.Location = new System.Drawing.Point(43, 411);
+			this.P207.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.P207.Name = "P207";
-			this.P207.Size = new System.Drawing.Size(110, 65);
+			this.P207.Size = new System.Drawing.Size(98, 52);
 			this.P207.TabIndex = 22;
 			this.P207.Text = "207";
 			this.P207.UseVisualStyleBackColor = false;
@@ -521,22 +543,24 @@
 			this.panel2.Controls.Add(this.P103);
 			this.panel2.Controls.Add(this.P102);
 			this.panel2.Controls.Add(this.P101);
-			this.panel2.Location = new System.Drawing.Point(343, 33);
+			this.panel2.Location = new System.Drawing.Point(305, 26);
+			this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.panel2.Name = "panel2";
-			this.panel2.Size = new System.Drawing.Size(758, 622);
+			this.panel2.Size = new System.Drawing.Size(674, 498);
 			this.panel2.TabIndex = 28;
 			// 
 			// Dashboard
 			// 
 			this.AccessibleRole = System.Windows.Forms.AccessibleRole.Window;
-			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.Azure;
 			this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-			this.ClientSize = new System.Drawing.Size(1135, 684);
+			this.ClientSize = new System.Drawing.Size(1009, 547);
 			this.Controls.Add(this.panel1);
 			this.Controls.Add(this.panel2);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+			this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.Name = "Dashboard";
 			this.RightToLeftLayout = true;
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

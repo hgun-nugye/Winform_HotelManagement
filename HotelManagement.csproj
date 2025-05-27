@@ -124,6 +124,12 @@
     <Compile Include="DichVuForm.Designer.cs">
       <DependentUpon>DichVuForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="DoanhThuReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DoanhThuReport.Designer.cs">
+      <DependentUpon>DoanhThuReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="DTO\HoaDonPhongDTO.cs" />
     <Compile Include="DTO\LichLamDTO.cs" />
     <Compile Include="DTO\LoaiPhongDTO.cs" />
@@ -229,6 +235,9 @@
     <EmbeddedResource Include="DichVuForm.resx">
       <DependentUpon>DichVuForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DoanhThuReport.resx">
+      <DependentUpon>DoanhThuReport.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="HoaDonDVForm.resx">
       <DependentUpon>HoaDonDVForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -321,5 +330,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
