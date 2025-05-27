@@ -125,16 +125,33 @@ namespace HotelManagement.GUII
 		private void bangLichLam_CellClick(object sender, DataGridViewCellEventArgs e)
 		{
 			int index = e.RowIndex;
-			inputMaNV.Text = bangLichLam.Rows[index].Cells["MaNV"].Value.ToString();
-			inputCaLam.Text = bangLichLam.Rows[index].Cells["CaLam"].Value.ToString();
-			inputNgayLam.Value = Convert.ToDateTime(bangLichLam.Rows[index].Cells["MaNV"].Value);
+
+			if (index < 0 || index >= bangLichLam.Rows.Count)
+				return;
+
+			var maNVValue = bangLichLam.Rows[index].Cells["MaNV"].Value;
+			var caLamValue = bangLichLam.Rows[index].Cells["CaLam"].Value;
+			var ngayLamValue = bangLichLam.Rows[index].Cells["NgayLam"].Value;
+
+			inputMaNV.Text = maNVValue?.ToString() ?? string.Empty;
+			inputCaLam.Text = caLamValue?.ToString() ?? string.Empty;
+
+			if (ngayLamValue != null && DateTime.TryParse(ngayLamValue.ToString(), out DateTime ngayLam))
+			{
+				inputNgayLam.Value = ngayLam;
+			}
+			else
+			{
+				inputNgayLam.Value = DateTime.Now;
+				MessageBox.Show("Invalid date format.");
+			}
 		}
 
 		private void back_Click(object sender, EventArgs e)
 		{
 			this.Hide();
-			var dashboard = new Dashboard();
-			dashboard.ShowDialog();
+			var nv = new bangNV();
+			nv.ShowDialog();
 		}
 
 		private void bangLichLam_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -168,3 +185,4 @@ namespace HotelManagement.GUII
 
 	}
 }
+

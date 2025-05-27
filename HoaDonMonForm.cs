@@ -35,23 +35,35 @@ namespace HotelManagement
 			ShowAllHoaDonMon();
 		}
 		//Hiển thị lên ô input thông tin hoa don mon an mỗi khi lia chuột đến row nhân viên bất kì
-		int ID;
 
 		private void dataGridViewHDM_CellClick(object sender, DataGridViewCellEventArgs e)
 		{
 			int index = e.RowIndex;
-			//ID = Int32.Parse(dataGridViewNV.Rows[index].Cells["ID"].Value.ToString());
-			textMaHDM.Text = dataGridViewHDM.Rows[index].Cells["MaHDM"].Value.ToString();
-			dateNgayDat.Value = Convert.ToDateTime(dataGridViewHDM.Rows[index].Cells["NgayDat"].Value);
-			textMaKH.Text = dataGridViewHDM.Rows[index].Cells["MaKH"].Value.ToString();
-						
-			if (double.TryParse(dataGridViewHDM.Rows[index].Cells["ThanhTien"].Value.ToString(), out double thanhTien))
+
+			if (index < 0 || index >= dataGridViewHDM.Rows.Count || dataGridViewHDM.Rows[index].IsNewRow)
+				return;
+
+			textMaHDM.Text = dataGridViewHDM.Rows[index].Cells["MaHDM"].Value?.ToString() ?? string.Empty;
+
+			if (dataGridViewHDM.Rows[index].Cells["NgayDat"].Value != DBNull.Value)
+			{
+				dateNgayDat.Value = Convert.ToDateTime(dataGridViewHDM.Rows[index].Cells["NgayDat"].Value);
+			}
+			else
+			{
+				dateNgayDat.Value = DateTime.Now; // or any default value you prefer
+			}
+
+			textMaKH.Text = dataGridViewHDM.Rows[index].Cells["MaKH"].Value?.ToString() ?? string.Empty;
+
+			if (dataGridViewHDM.Rows[index].Cells["ThanhTien"].Value != DBNull.Value &&
+				double.TryParse(dataGridViewHDM.Rows[index].Cells["ThanhTien"].Value.ToString(), out double thanhTien))
 			{
 				textThanhTien.Text = Math.Round(thanhTien, 2).ToString();
 			}
 			else
 			{
-				textThanhTien.Text = "0.00"; 
+				textThanhTien.Text = "0.00";
 			}
 		}
 		public bool checkData()
@@ -62,7 +74,7 @@ namespace HotelManagement
 				textMaHDM.Focus();
 				return false;
 			}
-						
+
 			if (string.IsNullOrEmpty(textMaKH.Text))
 			{
 				MessageBox.Show("Chưa nhập mã khách hàng", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -79,14 +91,22 @@ namespace HotelManagement
 			return true;
 		}
 
-		private void insert_Click(object sender, EventArgs e)
-		{
-
-		}
-
 		private void delete_Click(object sender, EventArgs e)
 		{
+			if (MessageBox.Show("Bạn có muốn xóa không ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+			{
+				HoaDonMonDTO hdm = new HoaDonMonDTO();
+				hdm.MaHDM = textMaHDM.Text;
 
+				if (busHDMon.DeleteHoaDonMon(hdm))
+				{
+					ShowAllHoaDonMon();
+				}
+				else
+				{
+					MessageBox.Show("Không xóa được!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+				}
+			}
 		}
 
 		private void update_Click(object sender, EventArgs e)
@@ -128,6 +148,18 @@ namespace HotelManagement
 			this.Hide();
 			var dashboard = new Dashboard();
 			dashboard.ShowDialog();
+		}
+
+		private void inputFind_Click(object sender, EventArgs e)
+		{
+			inputFind.Text = "";
+		}
+
+		private void bangHoaDonMon_Click(object sender, EventArgs e)
+		{
+			inputFind.Text = "Nhập mã hóa đơn món để tìm";
+			inputFind.ForeColor = Color.Gray;
+			inputFind.Font = new Font("Arial", 11, FontStyle.Italic);
 		}
 	}
 }

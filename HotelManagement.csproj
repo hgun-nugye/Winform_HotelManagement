@@ -48,6 +48,24 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -66,6 +84,7 @@
     <Compile Include="BUS\HoaDonBUS.cs" />
     <Compile Include="BUS\HoaDonDVBUS.cs" />
     <Compile Include="BUS\HoaDonMonBUS.cs" />
+    <Compile Include="BUS\HoaDonPhongBUS.cs" />
     <Compile Include="BUS\KhachHangBUS.cs" />
     <Compile Include="BUS\LichLam.cs" />
     <Compile Include="BUS\LoaiPhongBUS.cs" />
@@ -91,6 +110,7 @@
     <Compile Include="DAO\HoaDonDAO.cs" />
     <Compile Include="DAO\HoaDonDVDAO.cs" />
     <Compile Include="DAO\HoaDonMonDAO.cs" />
+    <Compile Include="DAO\HoaDonPhongDAO.cs" />
     <Compile Include="DAO\KhachHangDAO.cs" />
     <Compile Include="DAO\LichLamDAO.cs" />
     <Compile Include="DAO\LoaiPhongDAO.cs" />
@@ -104,6 +124,7 @@
     <Compile Include="DichVuForm.Designer.cs">
       <DependentUpon>DichVuForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="DTO\HoaDonPhongDTO.cs" />
     <Compile Include="DTO\LichLamDTO.cs" />
     <Compile Include="DTO\LoaiPhongDTO.cs" />
     <Compile Include="DTO\LuongDTO.cs" />
@@ -120,6 +141,12 @@
     </Compile>
     <Compile Include="HoaDonMonForm.Designer.cs">
       <DependentUpon>HoaDonMonForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HoaDonPhongForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HoaDonPhongForm.Designer.cs">
+      <DependentUpon>HoaDonPhongForm.cs</DependentUpon>
     </Compile>
     <Compile Include="KhachHangForm.cs">
       <SubType>Form</SubType>
@@ -186,6 +213,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="UuDai.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -206,6 +234,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="HoaDonMonForm.resx">
       <DependentUpon>HoaDonMonForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HoaDonPhongForm.resx">
+      <DependentUpon>HoaDonPhongForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="KhachHangForm.resx">
       <DependentUpon>KhachHangForm.cs</DependentUpon>
@@ -228,6 +259,9 @@
     <EmbeddedResource Include="NhanVienForm.resx">
       <DependentUpon>NhanVienForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="NhanVienForm.vi.resx">
+      <DependentUpon>NhanVienForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PhongForm.resx">
       <DependentUpon>PhongForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -246,6 +280,7 @@
     <EmbeddedResource Include="UuDai.resx">
       <DependentUpon>UuDai.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -270,6 +305,21 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

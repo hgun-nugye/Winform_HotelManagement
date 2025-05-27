@@ -34,27 +34,34 @@ namespace HotelManagement
 			inputFind.Font = new Font("Arial", 11, FontStyle.Italic);
 			ShowAllHoaDonDV();
 		}
-		//Hiển thị lên ô input thông tin hoa don dich vu mỗi khi lia chuột đến row nhân viên bất kì
-		int ID;
 
+		//Hiển thị lên ô input thông tin hoa don dich vu mỗi khi lia chuột đến row nhân viên bất kì
 		private void dataGridViewHDDV_CellClick(object sender, DataGridViewCellEventArgs e)
 		{
 			int index = e.RowIndex;
-			//ID = Int32.Parse(dataGridViewNV.Rows[index].Cells["ID"].Value.ToString());
-			textMaHDDV.Text = dataGridViewHDDV.Rows[index].Cells["MaHDDV"].Value.ToString();
-			dateNgayDat.Value = Convert.ToDateTime(dataGridViewHDDV.Rows[index].Cells["NgayDat"].Value);
-			textMaKH.Text = dataGridViewHDDV.Rows[index].Cells["MaKH"].Value.ToString();
+			if (index < 0) return;
+			textMaHDDV.Text = GetCellValue(dataGridViewHDDV.Rows[index].Cells["MaHDDV"]);
 
-			if (double.TryParse(dataGridViewHDDV.Rows[index].Cells["ThanhTien"].Value.ToString(), out double thanhTien))
+			if (DateTime.TryParse(GetCellValue(dataGridViewHDDV.Rows[index].Cells["NgayDat"]), out DateTime ngayDat))
 			{
-				textThanhTien.Text = Math.Round(thanhTien, 2).ToString();
+				dateNgayDat.Value = ngayDat;
+			}
+
+			textMaKH.Text = GetCellValue(dataGridViewHDDV.Rows[index].Cells["MaKH"]);
+
+			if (double.TryParse(GetCellValue(dataGridViewHDDV.Rows[index].Cells["ThanhTien"]), out double thanhTien))
+			{
+				textThanhTien.Text = Math.Round(thanhTien, 2).ToString("N2");
 			}
 			else
 			{
 				textThanhTien.Text = "0.00";
 			}
+		}
 
-
+		private string GetCellValue(DataGridViewCell cell)
+		{
+			return cell.Value != DBNull.Value ? cell.Value.ToString() : string.Empty;
 		}
 		public bool checkData()
 		{
@@ -64,7 +71,7 @@ namespace HotelManagement
 				textMaHDDV.Focus();
 				return false;
 			}
-						
+
 			if (string.IsNullOrEmpty(textMaKH.Text))
 			{
 				MessageBox.Show("Chưa nhập mã khách hàng", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Error);

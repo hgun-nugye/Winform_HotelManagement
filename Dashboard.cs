@@ -35,6 +35,9 @@ namespace HotelManagement
 		{
 			switch (toolStripComboBoxHD.SelectedItem.ToString())
 			{
+				case "HÓA ĐƠN PHÒNG":
+					NavigateTo(new bangHoaDonPhong());
+					break;
 				case "HÓA ĐƠN MÓN":
 					NavigateTo(new bangHoaDonMon());
 					break;
@@ -132,6 +135,11 @@ namespace HotelManagement
 					button.ForeColor = Color.Black;
 					break;
 			}
+		}
+
+		private void statis_Click(object sender, EventArgs e)
+		{
+
 		}
 	}
 }

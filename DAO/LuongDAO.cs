@@ -1,11 +1,7 @@
 ﻿using HotelManagement.DTO;
 using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Data.SqlClient;
 using System.Windows.Forms;
 
 namespace HotelManagement.DAO
@@ -107,25 +103,19 @@ namespace HotelManagement.DAO
 			return true;
 		}
 
-		public DataTable FindLuong(string cons)
+		public DataTable FindLuong(DateTime value)
 		{
 			SqlConnection con = dc.GetConnect();
 			if (con.State == ConnectionState.Closed)
 			{
 				con.Open();
 			}
-			int month, year=0;
-			if (int.TryParse(cons, out month))
-			{
-				string sql = "SELECT * FROM Luong WHERE MONTH(ThangLuong) = @month and YEAR(ThangLuong)=@year";
-				cmd = new SqlCommand(sql, con);
-				cmd.Parameters.AddWithValue("@month", month);
-				cmd.Parameters.AddWithValue("@year", year);
-			}
-			else
-			{
-				MessageBox.Show("Vui lòng nhập lại !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-			}
+			int month = value.Month;
+			int year = value.Year;
+			string sql = "SELECT * FROM Luong WHERE MONTH(ThangLuong) = @month and YEAR(ThangLuong)=@year";
+			cmd = new SqlCommand(sql, con);
+			cmd.Parameters.AddWithValue("@month", month);
+			cmd.Parameters.AddWithValue("@year", year);
 
 			da = new SqlDataAdapter(cmd);
 			DataTable dt = new DataTable();

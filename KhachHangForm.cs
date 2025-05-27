@@ -1,15 +1,9 @@
 ﻿using HotelManagement.BUS;
 using HotelManagement.DTO;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 
 namespace HotelManagement
 {
@@ -190,15 +184,10 @@ namespace HotelManagement
 
 		private void inputFind_MouseEnter(object sender, EventArgs e)
 		{
-			if (inputFind.Text == "Nhập mã, tên hoặc cccd để tìm")
-			{
-				inputFind.Text = "";
-				inputFind.ForeColor = Color.Black;
-				inputFind.Font = new Font("Arial", 11, FontStyle.Regular);
-			}
-		}
 
-		private void inputFind_TextChanged(object sender, EventArgs e)
+        }
+
+        private void inputFind_TextChanged(object sender, EventArgs e)
 		{
 			string value = inputFind.Text;
 			if (!string.IsNullOrEmpty(value))

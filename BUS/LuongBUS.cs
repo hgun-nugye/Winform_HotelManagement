@@ -37,7 +37,7 @@ namespace HotelManagement.BUS
 			return dalluong.Delete(nv);
 		}
 
-		public DataTable FindLuong(string name)
+		public DataTable FindLuong(DateTime name)
 		{
 			return dalluong.FindLuong(name);
 		}

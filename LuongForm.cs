@@ -1,16 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using HotelManagement.BUS;
+﻿using HotelManagement.BUS;
 using HotelManagement.DTO;
-using HotelManagement.DAO;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
+using System;
+using System.Data;
+using System.Windows.Forms;
 namespace HotelManagement.GUII
 {
 	public partial class LuongForm : Form
@@ -131,7 +123,7 @@ namespace HotelManagement.GUII
 
 		}
 
-        private void delete_Click(object sender, EventArgs e)
+		private void delete_Click(object sender, EventArgs e)
 		{
 			if (MessageBox.Show("Bạn có muốn xóa không ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
 			{
@@ -161,12 +153,12 @@ namespace HotelManagement.GUII
 			inputThangLuong.Value = Convert.ToDateTime(bangLuong.Rows[index].Cells["ThangLuong"].Value);
 		}
 
-		private void inputTimKiem_TextChanged(object sender, EventArgs e)
+		private void inputTimKiem_ValueChanged(object sender, EventArgs e)
 		{
-			string value = inputTimKiem.Text;
-			if (!string.IsNullOrEmpty(value))
+			DateTime input = inputTimKiem.Value;
+			if (input != DateTime.Now)
 			{
-				DataTable dt = busLuong.FindLuong(value);
+				DataTable dt = busLuong.FindLuong(input);
 				bangLuong.DataSource = dt;
 			}
 			else
@@ -178,8 +170,9 @@ namespace HotelManagement.GUII
 		private void back_Click(object sender, EventArgs e)
 		{
 			this.Hide();
-			var dashBoard = new Dashboard();
-			dashBoard.ShowDialog();
+			var nv = new bangNV();
+			nv.ShowDialog();
 		}
 	}
 }
+

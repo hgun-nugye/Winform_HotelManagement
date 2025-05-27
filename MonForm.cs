@@ -43,11 +43,14 @@ namespace HotelManagement.DAO
 		private void dataGridViewMon_CellClick(object sender, DataGridViewCellEventArgs e)
 		{
 			int index = e.RowIndex;
-			//ID = Int32.Parse(dataGridViewNV.Rows[index].Cells["ID"].Value.ToString());
-			textMaMon.Text = dataGridViewMon.Rows[index].Cells["Ma"].Value.ToString();
-			textTenMon.Text = dataGridViewMon.Rows[index].Cells["Ten"].Value.ToString();
-			textGiaMon.Text = dataGridViewMon.Rows[index].Cells["gia"].Value.ToString();
-			comboTT.Text = dataGridViewMon.Rows[index].Cells["TrangThai"].Value.ToString();
+
+			if (index < 0 || index >= dataGridViewMon.Rows.Count || dataGridViewMon.Rows[index].IsNewRow)
+				return;
+
+			textMaMon.Text = dataGridViewMon.Rows[index].Cells["Ma"].Value?.ToString() ?? string.Empty;
+			textTenMon.Text = dataGridViewMon.Rows[index].Cells["Ten"].Value?.ToString() ?? string.Empty;
+			textGiaMon.Text = dataGridViewMon.Rows[index].Cells["gia"].Value?.ToString() ?? string.Empty;
+			comboTT.Text = dataGridViewMon.Rows[index].Cells["TrangThai"].Value?.ToString() ?? string.Empty;
 		}
 		public bool checkData()
 		{

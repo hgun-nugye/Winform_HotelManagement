@@ -71,7 +71,6 @@
 			// 
 			this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
 			this.panel1.BackColor = System.Drawing.Color.PowderBlue;
-			this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
 			this.panel1.Controls.Add(this.customer);
 			this.panel1.Controls.Add(this.checkout);
 			this.panel1.Controls.Add(this.checkin);
@@ -221,32 +220,42 @@
 			// 
 			// menuHD
 			// 
+			this.menuHD.BackColor = System.Drawing.Color.Azure;
 			this.menuHD.Dock = System.Windows.Forms.DockStyle.None;
+			this.menuHD.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.menuHD.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
 			this.menuHD.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible;
-			this.menuHD.ImageScalingSize = new System.Drawing.Size(24, 24);
+			this.menuHD.ImageScalingSize = new System.Drawing.Size(0, 0);
 			this.menuHD.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripComboBoxHD});
 			this.menuHD.Location = new System.Drawing.Point(17, 445);
+			this.menuHD.MaximumSize = new System.Drawing.Size(380, 45);
 			this.menuHD.Name = "menuHD";
-			this.menuHD.Size = new System.Drawing.Size(265, 44);
+			this.menuHD.Padding = new System.Windows.Forms.Padding(4, 3, 3, 3);
+			this.menuHD.Size = new System.Drawing.Size(380, 40);
 			this.menuHD.TabIndex = 0;
+			this.menuHD.Text = "▶ HÓA ĐƠN";
 			// 
 			// toolStripComboBoxHD
 			// 
+			this.toolStripComboBoxHD.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuBar;
 			this.toolStripComboBoxHD.AutoCompleteCustomSource.AddRange(new string[] {
             "▶  HÓA ĐƠN"});
-			this.toolStripComboBoxHD.BackColor = System.Drawing.Color.PowderBlue;
-			this.toolStripComboBoxHD.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.toolStripComboBoxHD.ForeColor = System.Drawing.SystemColors.Desktop;
+			this.toolStripComboBoxHD.BackColor = System.Drawing.Color.Azure;
+			this.toolStripComboBoxHD.DropDownHeight = 120;
+			this.toolStripComboBoxHD.DropDownWidth = 200;
+			this.toolStripComboBoxHD.Font = new System.Drawing.Font("MS Reference Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.toolStripComboBoxHD.ForeColor = System.Drawing.Color.MidnightBlue;
+			this.toolStripComboBoxHD.IntegralHeight = false;
 			this.toolStripComboBoxHD.Items.AddRange(new object[] {
+            "HÓA ĐƠN PHÒNG",
             "HÓA ĐƠN MÓN",
             "HÓA ĐƠN DỊCH VỤ",
             "TỔNG HÓA ĐƠN"});
 			this.toolStripComboBoxHD.Margin = new System.Windows.Forms.Padding(0);
 			this.toolStripComboBoxHD.Name = "toolStripComboBoxHD";
-			this.toolStripComboBoxHD.Size = new System.Drawing.Size(250, 40);
-			this.toolStripComboBoxHD.Text = "▶  HÓA ĐƠN";
+			this.toolStripComboBoxHD.Size = new System.Drawing.Size(200, 34);
+			this.toolStripComboBoxHD.Text = "▶ HÓA ĐƠN";
 			this.toolStripComboBoxHD.SelectedIndexChanged += new System.EventHandler(this.toolStripComboBoxHD_Click);
 			// 
 			// P101
@@ -491,8 +500,7 @@
 			// 
 			// panel2
 			// 
-			this.panel2.BackColor = System.Drawing.Color.LightCyan;
-			this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.panel2.BackColor = System.Drawing.Color.LightBlue;
 			this.panel2.Controls.Add(this.P210);
 			this.panel2.Controls.Add(this.P209);
 			this.panel2.Controls.Add(this.P208);
@@ -532,7 +540,7 @@
 			this.Name = "Dashboard";
 			this.RightToLeftLayout = true;
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-			this.Text = "Dashboard";
+			this.Text = "Hotel Manangement System";
 			this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Dashboard_FormClosed);
 			this.Load += new System.EventHandler(this.Dashboard_Load);
 			this.panel1.ResumeLayout(false);

@@ -20,21 +20,23 @@ namespace HotelManagement
 		{
 			InitializeComponent();
 			this.buttonName = buttonName;
-			
+
 		}
 
 		private void PhongInfo_Load(object sender, EventArgs e)
 		{
-			string MaP = buttonName; // Lấy tên button đã click
-			string sql = @"SELECT p.MaP, hd.MaHD, hdp.MaHDP, kh.CCCD, cthdp.NgayNhan, 
-                          p.GiaMacDinh * (1 - COALESCE(ud.MucGiam, 0) / 100) AS ThanhTien, p.TrangThai 
-                   FROM KhachHang kh 
-                   JOIN HoaDon hd ON hd.MaKH = kh.MaKH 
-                   JOIN HoaDonPhong hdp ON hdp.MaKH = kh.MaKH 
-                   JOIN CTHDPhong cthdp ON cthdp.MaHDP = hdp.MaHDP 
-                   JOIN Phong p ON p.MaP = cthdp.MaP 
+			string MaP = buttonName; // Get the button name clicked
+			string sql = @"SELECT p.MaP, hd.MaHD, hdp.MaHDP, kh.CCCD, cthdp.NgayNhan, p.TrangThai,
+                        p.GiaMacDinh * (1 - COALESCE(ud.MucGiam, 0) / 100) AS ThanhTien 
+                   FROM Phong p 
+                   JOIN CTHDPhong cthdp ON cthdp.MaP = p.MaP
+                   JOIN HoaDonPhong hdp ON hdp.MaHDP = cthdp.MaHDP
+                   LEFT JOIN KhachHang kh ON kh.MaKH = hdp.MaKH
+                   JOIN HoaDon hd ON hd.MaLoaiHD = hdp.MaHDP
                    LEFT JOIN UuDai ud ON ud.MaUD = cthdp.MaUD 
-                   WHERE p.MaP = @MaP"; // Sử dụng tham số
+                   WHERE p.MaP = @MaP AND (p.TrangThai = N'Đã đặt' OR p.TrangThai = N'Đang sử dụng')";
+
+			maPhong.Text = MaP;
 
 			using (SqlConnection con = dc.GetConnect())
 			{
@@ -43,13 +45,12 @@ namespace HotelManagement
 					using (SqlCommand cmd = new SqlCommand(sql, con))
 					{
 						cmd.Parameters.AddWithValue("@MaP", MaP);
-						con.Open(); // Mở kết nối
+						con.Open(); // Open connection
 
 						using (SqlDataReader reader = cmd.ExecuteReader())
 						{
 							if (reader.Read())
 							{
-								maPhong.Text = reader["MaP"].ToString();
 								textMaHD.Text = reader["MaHD"]?.ToString() ?? "N/A";
 								textMaHDP.Text = reader["MaHDP"]?.ToString() ?? "N/A";
 								textCCCD.Text = reader["CCCD"]?.ToString() ?? "N/A";
@@ -59,13 +60,17 @@ namespace HotelManagement
 									: "N/A";
 
 								decimal thanhTien = reader["ThanhTien"] != DBNull.Value
-								? Convert.ToDecimal(reader["ThanhTien"])
-								: 0;
+									? Convert.ToDecimal(reader["ThanhTien"])
+									: 0;
 
-								tongTien.Text = Math.Round(thanhTien, 2).ToString("F2");								
+								tongTien.Text = Math.Round(thanhTien, 2).ToString("F2");
 							}
 						}
 					}
+				}
+				catch (SqlException sqlEx)
+				{
+					MessageBox.Show("Lỗi SQL: " + sqlEx.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
 				}
 				catch (Exception ex)
 				{

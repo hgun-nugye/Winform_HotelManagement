@@ -36,7 +36,7 @@ namespace HotelManagement
 			ShowAllDichVu();
 		}
 		//Hiển thị lên ô input thông tin dich vu mỗi khi lia chuột đến row nhân viên bất kì
-		
+
 		private void dataGridViewDichVu_CellClick(object sender, DataGridViewCellEventArgs e)
 		{
 			int index = e.RowIndex;
@@ -174,7 +174,7 @@ namespace HotelManagement
 
 		}
 
-		
+
 		private void inputFind_Click(object sender, EventArgs e)
 		{
 			inputFind.Text = null;
@@ -182,7 +182,7 @@ namespace HotelManagement
 
 		private void fillByToolStripButton_Click(object sender, EventArgs e)
 		{
-			
+
 		}
 	}
 }
