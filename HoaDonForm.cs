@@ -36,6 +36,16 @@ namespace HotelManagement
 			inputFind.Text = "Nhập mã, tên hoặc cccd để tìm";
 			inputFind.ForeColor = Color.Gray;
 			inputFind.Font = new Font("Arial", 11, FontStyle.Italic);
+			textMaHD = null;
+			textMaKH = null; 
+			textMaNV = null;
+			textUuDai = null;
+			comboTT = null;
+			listHDP = null;
+			listHDM = null;
+			listHDDV = null;
+			inputNgayXuat = null;
+			// Hiển thị toàn bộ hóa đơn khi form được tải
 			ShowAllHoaDon();
 		}
 		//Hiển thị lên ô input thông tin nhân viên mỗi khi lia chuột đến row nhân viên bất kì
