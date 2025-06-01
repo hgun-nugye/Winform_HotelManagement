@@ -33,10 +33,10 @@
 			// 
 			// reportViewer1
 			// 
-			this.reportViewer1.Location = new System.Drawing.Point(89, 200);
+			this.reportViewer1.Location = new System.Drawing.Point(-1, 2);
 			this.reportViewer1.Name = "reportViewer1";
 			this.reportViewer1.ServerReport.BearerToken = null;
-			this.reportViewer1.Size = new System.Drawing.Size(791, 391);
+			this.reportViewer1.Size = new System.Drawing.Size(965, 602);
 			this.reportViewer1.TabIndex = 0;
 			// 
 			// DoanhThuReport

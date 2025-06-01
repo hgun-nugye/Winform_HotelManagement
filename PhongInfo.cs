@@ -27,13 +27,12 @@ namespace HotelManagement
 		{
 			string MaP = buttonName; // Get the button name clicked
 			string sql = @"SELECT p.MaP, hd.MaHD, hdp.MaHDP, kh.CCCD, cthdp.NgayNhan, p.TrangThai,
-                        p.GiaMacDinh * (1 - COALESCE(ud.MucGiam, 0) / 100) AS ThanhTien 
+                        p.GiaMacDinh AS ThanhTien 
                    FROM Phong p 
                    JOIN CTHDPhong cthdp ON cthdp.MaP = p.MaP
                    JOIN HoaDonPhong hdp ON hdp.MaHDP = cthdp.MaHDP
                    LEFT JOIN KhachHang kh ON kh.MaKH = hdp.MaKH
-                   JOIN HoaDon hd ON hd.MaLoaiHD = hdp.MaHDP
-                   LEFT JOIN UuDai ud ON ud.MaUD = cthdp.MaUD 
+                   JOIN HoaDon hd ON hd.MaLoaiHD = hdp.MaHDP                  
                    WHERE p.MaP = @MaP AND (p.TrangThai = N'Đã đặt' OR p.TrangThai = N'Đang sử dụng')";
 
 			maPhong.Text = MaP;

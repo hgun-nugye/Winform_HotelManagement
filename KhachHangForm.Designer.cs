@@ -73,7 +73,7 @@
 			this.inputFind.Name = "inputFind";
 			this.inputFind.Size = new System.Drawing.Size(456, 40);
 			this.inputFind.TabIndex = 41;
-			this.inputFind.Click += new System.EventHandler(this.update_Click);
+			this.inputFind.Click += new System.EventHandler(this.inputFind_MouseEnter);
 			this.inputFind.TextChanged += new System.EventHandler(this.inputFind_TextChanged);
 			// 
 			// textEmail_KH

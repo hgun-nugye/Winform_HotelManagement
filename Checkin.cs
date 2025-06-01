@@ -124,9 +124,9 @@ namespace HotelManagement
 				}
 
 				// Insert into CTHoaDonPhong and retrieve MaCTHDP
-				string CTHDPhong = "INSERT INTO CTHDPhong (MaCTHDP, MaHDP, MaP, NgayNhan, NgayTra, MaUD, TrangThai)" +
+				string CTHDPhong = "INSERT INTO CTHDPhong (MaCTHDP, MaHDP, MaP, NgayNhan, NgayTra, TrangThai)" +
 								 "OUTPUT INSERTED.MaCTHDP " +
-								 "VALUES (dbo.GenerateMaCTHDP(), @maHDP, @maP, @ngayNhan, @ngayTra, NULL, @trangThai)";
+								 "VALUES (dbo.GenerateMaCTHDP(), @maHDP, @maP, @ngayNhan, @ngayTra,@trangThai)";
 
 				string generatedMaCTHDP;
 
@@ -138,13 +138,13 @@ namespace HotelManagement
 					cmd.Parameters.AddWithValue("@ngayTra", ngayTra);
 					cmd.Parameters.AddWithValue("@trangThai", trangThai);
 
-					generatedMaCTHDP = (string)cmd.ExecuteScalar(); // Get the generated MaCTHDP
+					generatedMaCTHDP = (string)cmd.ExecuteScalar(); 
 				}
 
 				// Insert into HoaDon retrieve MaHD
-				string HD = "INSERT INTO HoaDon (MaHD, MaKH, MaNV, MaLoaiHD, NgayXuatHD, MaUD, TrangThai) " +
+				string HD = "INSERT INTO HoaDon (MaHD, MaKH, MaNV, MaLoaiHD, NgayXuatHD, TrangThai) " +
 					 "OUTPUT INSERTED.MaHD " +
-							 " VALUES (dbo.GenerateMaHD(), @maKH, 'NV002', @maLoaiHD, NULL, NULL, @trangThai)";
+							 " VALUES (dbo.GenerateMaHD(), @maKH, 'NV002', @maLoaiHD, NULL, @trangThai)";
 				string generatedMaHD;
 
 				using (SqlCommand cmd = new SqlCommand(HD, conn))

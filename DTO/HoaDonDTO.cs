@@ -13,7 +13,6 @@ namespace HotelManagement.DTO
         public string MaKH { get; set; }
         public DateTime NgayXuatHD { get; set; }
         public string MaLoaiHD { get; set; }
-        public string MaUD { get; set; }
         public string TrangThai { get; set; }
     }
 }

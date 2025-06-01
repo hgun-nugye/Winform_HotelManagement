@@ -24,7 +24,7 @@ namespace HotelManagement.DAO
 		public DataTable getAllHoaDonMon()
 		{
 			// Tạo lệnh - Mở kết nối - Tạo adap/command - Đổ dữ liệu/ xử lý dữ liệu đầu - đóng cổng
-			string sql = "SELECT  HDMon.MaHDM, MaNV, MaKH, NgayDat,CTHDM.NgaySD,CTHDM.MaP, M.TenMon,CTHDM.SL_Mon, CTHDM.TrangThai,  UDM.MaUD, M.GiaMon * CTHDM.SL_Mon * (1 - ISNULL(UDM.MucGiam, 0) / 100) AS \"Thành Tiền\"  FROM HoaDonMon HDMon JOIN CTHDMon CTHDM ON HDMon.MaHDM = CTHDM.MaHDM JOIN Mon M ON CTHDM.MaMon = M.MaMon LEFT JOIN UuDai UDM ON UDM.MaUD = CTHDM.MaUD ";
+			string sql = "SELECT  HDMon.MaHDM, MaNV, MaKH, NgayDat,CTHDM.NgaySD,CTHDM.MaP, M.TenMon,CTHDM.SL_Mon, CTHDM.TrangThai, M.GiaMon * CTHDM.SL_Mon AS \"Thành Tiền\"  FROM HoaDonMon HDMon JOIN CTHDMon CTHDM ON HDMon.MaHDM = CTHDM.MaHDM JOIN Mon M ON CTHDM.MaMon = M.MaMon ";
 			SqlConnection con = dc.GetConnect();
 			con.Open();
 			da = new SqlDataAdapter(sql, con);

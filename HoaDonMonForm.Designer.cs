@@ -38,6 +38,9 @@
 			this.textMaHDM = new System.Windows.Forms.TextBox();
 			this.label1 = new System.Windows.Forms.Label();
 			this.dataGridViewHDM = new System.Windows.Forms.DataGridView();
+			this.button1 = new System.Windows.Forms.Button();
+			this.button3 = new System.Windows.Forms.Button();
+			this.label14 = new System.Windows.Forms.Label();
 			this.MaHDM = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.MaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.MaKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,11 +50,7 @@
 			this.TenMon = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.SL_Mon = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.TrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.MaUD = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.ThanhTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.button1 = new System.Windows.Forms.Button();
-			this.button3 = new System.Windows.Forms.Button();
-			this.label14 = new System.Windows.Forms.Label();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridViewHDM)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -59,7 +58,7 @@
 			// 
 			this.textThanhTien.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.textThanhTien.Location = new System.Drawing.Point(668, 114);
-			this.textThanhTien.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.textThanhTien.Margin = new System.Windows.Forms.Padding(4);
 			this.textThanhTien.Multiline = true;
 			this.textThanhTien.Name = "textThanhTien";
 			this.textThanhTien.Size = new System.Drawing.Size(252, 40);
@@ -80,7 +79,7 @@
 			// 
 			this.inputFind.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
 			this.inputFind.Location = new System.Drawing.Point(500, 214);
-			this.inputFind.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.inputFind.Margin = new System.Windows.Forms.Padding(4);
 			this.inputFind.Multiline = true;
 			this.inputFind.Name = "inputFind";
 			this.inputFind.Size = new System.Drawing.Size(420, 41);
@@ -91,7 +90,7 @@
 			// 
 			this.textMaKH.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.textMaKH.Location = new System.Drawing.Point(668, 67);
-			this.textMaKH.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.textMaKH.Margin = new System.Windows.Forms.Padding(4);
 			this.textMaKH.Multiline = true;
 			this.textMaKH.Name = "textMaKH";
 			this.textMaKH.Size = new System.Drawing.Size(252, 35);
@@ -125,7 +124,7 @@
 			this.dateNgayDat.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.dateNgayDat.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
 			this.dateNgayDat.Location = new System.Drawing.Point(235, 126);
-			this.dateNgayDat.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.dateNgayDat.Margin = new System.Windows.Forms.Padding(4);
 			this.dateNgayDat.Name = "dateNgayDat";
 			this.dateNgayDat.Size = new System.Drawing.Size(213, 30);
 			this.dateNgayDat.TabIndex = 30;
@@ -134,7 +133,7 @@
 			// 
 			this.textMaHDM.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.textMaHDM.Location = new System.Drawing.Point(235, 63);
-			this.textMaHDM.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.textMaHDM.Margin = new System.Windows.Forms.Padding(4);
 			this.textMaHDM.Multiline = true;
 			this.textMaHDM.Name = "textMaHDM";
 			this.textMaHDM.Size = new System.Drawing.Size(213, 39);
@@ -166,15 +165,52 @@
             this.TenMon,
             this.SL_Mon,
             this.TrangThai,
-            this.MaUD,
             this.ThanhTien});
 			this.dataGridViewHDM.Location = new System.Drawing.Point(41, 274);
-			this.dataGridViewHDM.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.dataGridViewHDM.Margin = new System.Windows.Forms.Padding(4);
 			this.dataGridViewHDM.Name = "dataGridViewHDM";
 			this.dataGridViewHDM.RowHeadersWidth = 62;
 			this.dataGridViewHDM.Size = new System.Drawing.Size(878, 245);
 			this.dataGridViewHDM.TabIndex = 27;
 			this.dataGridViewHDM.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewHDM_CellClick);
+			// 
+			// button1
+			// 
+			this.button1.BackColor = System.Drawing.Color.LightSkyBlue;
+			this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.button1.ForeColor = System.Drawing.SystemColors.ControlText;
+			this.button1.Location = new System.Drawing.Point(146, 214);
+			this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+			this.button1.Name = "button1";
+			this.button1.Size = new System.Drawing.Size(80, 40);
+			this.button1.TabIndex = 68;
+			this.button1.Text = "Back";
+			this.button1.UseVisualStyleBackColor = false;
+			this.button1.Click += new System.EventHandler(this.back_Click);
+			// 
+			// button3
+			// 
+			this.button3.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+			this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.button3.Location = new System.Drawing.Point(44, 214);
+			this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+			this.button3.Name = "button3";
+			this.button3.Size = new System.Drawing.Size(80, 40);
+			this.button3.TabIndex = 66;
+			this.button3.Text = "Xóa";
+			this.button3.UseVisualStyleBackColor = false;
+			this.button3.Click += new System.EventHandler(this.delete_Click);
+			// 
+			// label14
+			// 
+			this.label14.AutoSize = true;
+			this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label14.ForeColor = System.Drawing.Color.Teal;
+			this.label14.Location = new System.Drawing.Point(367, 14);
+			this.label14.Name = "label14";
+			this.label14.Size = new System.Drawing.Size(198, 29);
+			this.label14.TabIndex = 71;
+			this.label14.Text = "HÓA ĐƠN MÓN";
 			// 
 			// MaHDM
 			// 
@@ -248,14 +284,6 @@
 			this.TrangThai.Name = "TrangThai";
 			this.TrangThai.Width = 89;
 			// 
-			// MaUD
-			// 
-			this.MaUD.DataPropertyName = "MaUD";
-			this.MaUD.HeaderText = "Mã Ưu đãi";
-			this.MaUD.MinimumWidth = 8;
-			this.MaUD.Name = "MaUD";
-			this.MaUD.Width = 90;
-			// 
 			// ThanhTien
 			// 
 			this.ThanhTien.DataPropertyName = "Thành Tiền";
@@ -263,44 +291,6 @@
 			this.ThanhTien.MinimumWidth = 8;
 			this.ThanhTien.Name = "ThanhTien";
 			this.ThanhTien.Width = 91;
-			// 
-			// button1
-			// 
-			this.button1.BackColor = System.Drawing.Color.LightSkyBlue;
-			this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.button1.ForeColor = System.Drawing.SystemColors.ControlText;
-			this.button1.Location = new System.Drawing.Point(146, 214);
-			this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(80, 40);
-			this.button1.TabIndex = 68;
-			this.button1.Text = "Back";
-			this.button1.UseVisualStyleBackColor = false;
-			this.button1.Click += new System.EventHandler(this.back_Click);
-			// 
-			// button3
-			// 
-			this.button3.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-			this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.button3.Location = new System.Drawing.Point(44, 214);
-			this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-			this.button3.Name = "button3";
-			this.button3.Size = new System.Drawing.Size(80, 40);
-			this.button3.TabIndex = 66;
-			this.button3.Text = "Xóa";
-			this.button3.UseVisualStyleBackColor = false;
-			this.button3.Click += new System.EventHandler(this.delete_Click);
-			// 
-			// label14
-			// 
-			this.label14.AutoSize = true;
-			this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label14.ForeColor = System.Drawing.Color.Teal;
-			this.label14.Location = new System.Drawing.Point(367, 14);
-			this.label14.Name = "label14";
-			this.label14.Size = new System.Drawing.Size(198, 29);
-			this.label14.TabIndex = 71;
-			this.label14.Text = "HÓA ĐƠN MÓN";
 			// 
 			// bangHoaDonMon
 			// 
@@ -345,6 +335,9 @@
 		private System.Windows.Forms.TextBox textMaHDM;
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.DataGridView dataGridViewHDM;
+		private System.Windows.Forms.Button button1;
+		private System.Windows.Forms.Button button3;
+		private System.Windows.Forms.Label label14;
 		private System.Windows.Forms.DataGridViewTextBoxColumn MaHDM;
 		private System.Windows.Forms.DataGridViewTextBoxColumn MaNV;
 		private System.Windows.Forms.DataGridViewTextBoxColumn MaKH;
@@ -354,10 +347,6 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn TenMon;
 		private System.Windows.Forms.DataGridViewTextBoxColumn SL_Mon;
 		private System.Windows.Forms.DataGridViewTextBoxColumn TrangThai;
-		private System.Windows.Forms.DataGridViewTextBoxColumn MaUD;
 		private System.Windows.Forms.DataGridViewTextBoxColumn ThanhTien;
-		private System.Windows.Forms.Button button1;
-		private System.Windows.Forms.Button button3;
-		private System.Windows.Forms.Label label14;
 	}
 }

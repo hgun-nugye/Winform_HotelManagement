@@ -1,16 +1,10 @@
 ﻿using HotelManagement.BUS;
 using HotelManagement.DTO;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 
 namespace HotelManagement
 {
@@ -36,44 +30,60 @@ namespace HotelManagement
 			inputFind.Text = "Nhập mã, tên hoặc cccd để tìm";
 			inputFind.ForeColor = Color.Gray;
 			inputFind.Font = new Font("Arial", 11, FontStyle.Italic);
-			textMaHD = null;
-			textMaKH = null; 
-			textMaNV = null;
-			textUuDai = null;
-			comboTT = null;
-			listHDP = null;
-			listHDM = null;
-			listHDDV = null;
-			inputNgayXuat = null;
+			textMaHD.Text = string.Empty;
+			textMaKH.Text = string.Empty;
+			textMaNV.Text = string.Empty;
+			comboTT.Text = string.Empty;
+			listHDP.Text = string.Empty;
+			listHDM.Text = string.Empty;
+			listHDDV.Text = string.Empty;
+			inputNgayXuat.Text = string.Empty;
 			// Hiển thị toàn bộ hóa đơn khi form được tải
 			ShowAllHoaDon();
 		}
 		//Hiển thị lên ô input thông tin nhân viên mỗi khi lia chuột đến row nhân viên bất kì
+		private string GetCellValue(DataGridViewCell cell)
+		{
+			return cell?.Value != DBNull.Value ? cell.Value.ToString() : string.Empty;
+		}
 		private void dataGridViewHD_CellClick(object sender, DataGridViewCellEventArgs e)
 		{
 			int index = e.RowIndex;
 
-			if (index >= 0)
+			if (index < 0 || index >= dataGridViewHD.Rows.Count) return;
+
+			var row = dataGridViewHD.Rows[index];
+
+			string mahd = GetCellValue(row.Cells["MaHD"]);
+			string makh = GetCellValue(row.Cells["MaKH"]);
+			string manv = GetCellValue(row.Cells["MaNV"]);
+			textMaHD.Text = mahd;
+			textMaKH.Text = makh;
+			textMaNV.Text = manv;
+
+			string maHoaDon = textMaHD.Text;
+			LoadLoaiHoaDon(maHoaDon);
+
+			// Check and convert Ngày Xuất
+			if (DateTime.TryParse(GetCellValue(row.Cells["NgayXuatHD"]), out DateTime ngayXuat))
 			{
-				textMaHD.Text = dataGridViewHD.Rows[index].Cells["MaHD"].Value?.ToString() ?? string.Empty;
-				textMaKH.Text = dataGridViewHD.Rows[index].Cells["MaKH"].Value?.ToString() ?? string.Empty;
-				textMaNV.Text = dataGridViewHD.Rows[index].Cells["MaNV"].Value?.ToString() ?? string.Empty;
+				inputNgayXuat.Value = ngayXuat;
+			}
+			else
+			{
+				inputNgayXuat.Value = DateTime.Now;
+			}
 
-				// Kiểm tra và chuyển đổi Ngày Xuất
-				if (dataGridViewHD.Rows[index].Cells["NgayXuatHD"].Value != DBNull.Value)
-				{
-					inputNgayXuat.Value = Convert.ToDateTime(dataGridViewHD.Rows[index].Cells["NgayXuatHD"].Value);
-				}
-				else
-				{
-					inputNgayXuat.Value = DateTime.Now; // Hoặc một giá trị mặc định khác
-				}
+			comboTT.Text = GetCellValue(row.Cells["TrangThai"]);
 
-				textUuDai.Text = dataGridViewHD.Rows[index].Cells["MaUD"].Value?.ToString() ?? string.Empty;
-				comboTT.Text = dataGridViewHD.Rows[index].Cells["TrangThai"].Value?.ToString() ?? string.Empty;
-
-				string maHoaDon = dataGridViewHD.Rows[index].Cells["MaHD"].Value?.ToString() ?? string.Empty;
-				LoadLoaiHoaDon(maHoaDon);
+			// Check and convert ThanhTien
+			if (double.TryParse(GetCellValue(row.Cells["ThanhTien"]), out double thanhTien))
+			{
+				TongHD.Text = Math.Round(thanhTien, 2).ToString("N2");
+			}
+			else
+			{
+				TongHD.Text = "0.00";
 			}
 		}
 		private void LoadLoaiHoaDon(string maHoaDon)
@@ -113,95 +123,6 @@ namespace HotelManagement
 			}
 		}
 
-		// Kiểm tra nhập chưa
-		public bool checkData()
-		{
-			if (string.IsNullOrEmpty(textMaHD.Text))
-			{
-				MessageBox.Show("Chưa nhập Mã Hóa đơn", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-				textMaHD.Focus();
-				return false;
-			}
-
-			if (string.IsNullOrEmpty(textMaKH.Text))
-			{
-				MessageBox.Show("Chưa nhập Mã khách hàng", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-				textMaKH.Focus();
-				return false;
-			}
-
-			if (string.IsNullOrEmpty(textMaNV.Text))
-			{
-				MessageBox.Show("Chưa nhập Mã nhân viên", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-				textMaNV.Focus();
-				return false;
-			}
-
-			if (string.IsNullOrEmpty(listHDP.Text) && string.IsNullOrEmpty(listHDM.Text) && string.IsNullOrEmpty(listHDDV.Text))
-			{
-				MessageBox.Show("Chưa nhập Mã loại hóa đơn ", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-				listHDP.Focus();
-				listHDM.Focus();
-				listHDDV.Focus();
-				return false;
-			}
-
-			if (!inputNgayXuat.Checked)
-			{
-				MessageBox.Show("Chưa nhập ngày xuất hóa đơn", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-				inputNgayXuat.Focus();
-				return false;
-			}
-
-
-			if (string.IsNullOrEmpty(comboTT.Text))
-			{
-				MessageBox.Show("Chưa nhập trạng thái Hóa đơn", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-				comboTT.Focus();
-				return false;
-			}
-			return true;
-		}
-		// phương thức tạo HoaDonDTO
-		private HoaDonDTO CreateHoaDonDTO(string loaiHD)
-		{
-			return new HoaDonDTO
-			{
-				MaHD = textMaHD.Text,
-				MaKH = textMaKH.Text,
-				MaNV = textMaNV.Text,
-				NgayXuatHD = inputNgayXuat.Value,
-				MaLoaiHD = loaiHD,
-				MaUD = textUuDai.Text,
-				TrangThai = comboTT.Text
-			};
-		}
-
-		//nút update 
-		private void update_Click(object sender, EventArgs e)
-		{
-			if (checkData())
-			{
-				//TextBox[] textBoxes = { listHDP, textHDM, textHDDV };
-
-				//foreach (var textBox in textBoxes)
-				//{
-				//    if (!string.IsNullOrEmpty(textBox.Text)) // Check if TextBox is not empty
-				//    {
-				//        HoaDonDTO hd = CreateHoaDonDTO(textBox.Text);
-
-				//        if (busHD.UpdateHoaDon(hd)) // Make sure to call the Update method
-				//        {
-				//            ShowAllHoaDon();
-				//        }
-				//        else
-				//        {
-				//            MessageBox.Show("Không thể cập nhật!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-				//        }
-				//    }
-				//}
-			}
-		}
 
 		// nút xóa
 		private void delete_Click(object sender, EventArgs e)
@@ -250,6 +171,11 @@ namespace HotelManagement
 		{
 			this.Hide();
 			new Dashboard().Show();
+		}
+
+		private void textBox1_TextChanged(object sender, EventArgs e)
+		{
+
 		}
 	}
 }

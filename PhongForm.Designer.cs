@@ -38,15 +38,6 @@
 			this.label7 = new System.Windows.Forms.Label();
 			this.label8 = new System.Windows.Forms.Label();
 			this.bangPhong = new System.Windows.Forms.DataGridView();
-			this.MaP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.MaLP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.TenLP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.SucChua = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.SoGiuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.DienTich = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.TienNghi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.TrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.GiaMacDinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.inputGiaMacDinh = new System.Windows.Forms.TextBox();
 			this.inputTenLP = new System.Windows.Forms.TextBox();
 			this.inputMaLP = new System.Windows.Forms.TextBox();
@@ -61,6 +52,15 @@
 			this.insert = new System.Windows.Forms.Button();
 			this.comboTT = new System.Windows.Forms.ComboBox();
 			this.label14 = new System.Windows.Forms.Label();
+			this.MaP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.MaLP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.TenLP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.SucChua = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.SoGiuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.DienTich = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.TienNghi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.TrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.GiaMacDinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			((System.ComponentModel.ISupportInitialize)(this.bangPhong)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -174,6 +174,7 @@
 			// 
 			// bangPhong
 			// 
+			this.bangPhong.AllowUserToOrderColumns = true;
 			this.bangPhong.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
 			this.bangPhong.BackgroundColor = System.Drawing.Color.Ivory;
 			this.bangPhong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -196,86 +197,6 @@
 			this.bangPhong.Size = new System.Drawing.Size(875, 204);
 			this.bangPhong.TabIndex = 36;
 			this.bangPhong.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.bangPhong_CellClick);
-			// 
-			// MaP
-			// 
-			this.MaP.DataPropertyName = "MaP";
-			this.MaP.HeaderText = "Mã phòng";
-			this.MaP.MinimumWidth = 8;
-			this.MaP.Name = "MaP";
-			this.MaP.ReadOnly = true;
-			this.MaP.Width = 89;
-			// 
-			// MaLP
-			// 
-			this.MaLP.DataPropertyName = "MaLP";
-			this.MaLP.HeaderText = "Mã loại phòng";
-			this.MaLP.MinimumWidth = 8;
-			this.MaLP.Name = "MaLP";
-			this.MaLP.Width = 111;
-			// 
-			// TenLP
-			// 
-			this.TenLP.DataPropertyName = "TenLP";
-			this.TenLP.HeaderText = "Tên loại phòng";
-			this.TenLP.MinimumWidth = 8;
-			this.TenLP.Name = "TenLP";
-			this.TenLP.ReadOnly = true;
-			this.TenLP.Width = 116;
-			// 
-			// SucChua
-			// 
-			this.SucChua.DataPropertyName = "SucChua";
-			this.SucChua.HeaderText = "Sức chứa";
-			this.SucChua.MinimumWidth = 8;
-			this.SucChua.Name = "SucChua";
-			this.SucChua.ReadOnly = true;
-			this.SucChua.Width = 84;
-			// 
-			// SoGiuong
-			// 
-			this.SoGiuong.DataPropertyName = "SoGiuong";
-			this.SoGiuong.HeaderText = "Số giường";
-			this.SoGiuong.MinimumWidth = 8;
-			this.SoGiuong.Name = "SoGiuong";
-			this.SoGiuong.ReadOnly = true;
-			this.SoGiuong.Width = 90;
-			// 
-			// DienTich
-			// 
-			this.DienTich.DataPropertyName = "DienTich";
-			this.DienTich.HeaderText = "Diện tích";
-			this.DienTich.MinimumWidth = 8;
-			this.DienTich.Name = "DienTich";
-			this.DienTich.ReadOnly = true;
-			this.DienTich.Width = 81;
-			// 
-			// TienNghi
-			// 
-			this.TienNghi.DataPropertyName = "TienNghi";
-			this.TienNghi.HeaderText = "Tiện nghi";
-			this.TienNghi.MinimumWidth = 8;
-			this.TienNghi.Name = "TienNghi";
-			this.TienNghi.ReadOnly = true;
-			this.TienNghi.Width = 84;
-			// 
-			// TrangThai
-			// 
-			this.TrangThai.DataPropertyName = "TrangThai";
-			this.TrangThai.HeaderText = "Trạng thái";
-			this.TrangThai.MinimumWidth = 8;
-			this.TrangThai.Name = "TrangThai";
-			this.TrangThai.ReadOnly = true;
-			this.TrangThai.Width = 89;
-			// 
-			// GiaMacDinh
-			// 
-			this.GiaMacDinh.DataPropertyName = "GiaMacDinh";
-			this.GiaMacDinh.HeaderText = "Giá mặc định";
-			this.GiaMacDinh.MinimumWidth = 8;
-			this.GiaMacDinh.Name = "GiaMacDinh";
-			this.GiaMacDinh.ReadOnly = true;
-			this.GiaMacDinh.Width = 105;
 			// 
 			// inputGiaMacDinh
 			// 
@@ -434,6 +355,85 @@
 			this.label14.TabIndex = 67;
 			this.label14.Text = "DANH SÁCH PHÒNG";
 			// 
+			// MaP
+			// 
+			this.MaP.DataPropertyName = "MaP";
+			this.MaP.HeaderText = "Mã Phòng";
+			this.MaP.MinimumWidth = 6;
+			this.MaP.Name = "MaP";
+			this.MaP.Width = 97;
+			// 
+			// MaLP
+			// 
+			this.MaLP.DataPropertyName = "MaLP";
+			this.MaLP.HeaderText = "Mã loại phòng";
+			this.MaLP.MinimumWidth = 8;
+			this.MaLP.Name = "MaLP";
+			this.MaLP.Width = 121;
+			// 
+			// TenLP
+			// 
+			this.TenLP.DataPropertyName = "TenLP";
+			this.TenLP.HeaderText = "Tên loại phòng";
+			this.TenLP.MinimumWidth = 8;
+			this.TenLP.Name = "TenLP";
+			this.TenLP.ReadOnly = true;
+			this.TenLP.Width = 116;
+			// 
+			// SucChua
+			// 
+			this.SucChua.DataPropertyName = "SucChua";
+			this.SucChua.HeaderText = "Sức chứa";
+			this.SucChua.MinimumWidth = 8;
+			this.SucChua.Name = "SucChua";
+			this.SucChua.ReadOnly = true;
+			this.SucChua.Width = 84;
+			// 
+			// SoGiuong
+			// 
+			this.SoGiuong.DataPropertyName = "SoGiuong";
+			this.SoGiuong.HeaderText = "Số giường";
+			this.SoGiuong.MinimumWidth = 8;
+			this.SoGiuong.Name = "SoGiuong";
+			this.SoGiuong.ReadOnly = true;
+			this.SoGiuong.Width = 90;
+			// 
+			// DienTich
+			// 
+			this.DienTich.DataPropertyName = "DienTich";
+			this.DienTich.HeaderText = "Diện tích";
+			this.DienTich.MinimumWidth = 8;
+			this.DienTich.Name = "DienTich";
+			this.DienTich.ReadOnly = true;
+			this.DienTich.Width = 81;
+			// 
+			// TienNghi
+			// 
+			this.TienNghi.DataPropertyName = "TienNghi";
+			this.TienNghi.HeaderText = "Tiện nghi";
+			this.TienNghi.MinimumWidth = 8;
+			this.TienNghi.Name = "TienNghi";
+			this.TienNghi.ReadOnly = true;
+			this.TienNghi.Width = 84;
+			// 
+			// TrangThai
+			// 
+			this.TrangThai.DataPropertyName = "TrangThai";
+			this.TrangThai.HeaderText = "Trạng thái";
+			this.TrangThai.MinimumWidth = 8;
+			this.TrangThai.Name = "TrangThai";
+			this.TrangThai.ReadOnly = true;
+			this.TrangThai.Width = 89;
+			// 
+			// GiaMacDinh
+			// 
+			this.GiaMacDinh.DataPropertyName = "GiaMacDinh";
+			this.GiaMacDinh.HeaderText = "Giá mặc định";
+			this.GiaMacDinh.MinimumWidth = 8;
+			this.GiaMacDinh.Name = "GiaMacDinh";
+			this.GiaMacDinh.ReadOnly = true;
+			this.GiaMacDinh.Width = 105;
+			// 
 			// PhongForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -503,6 +503,7 @@
 		private System.Windows.Forms.Button delete;
 		private System.Windows.Forms.Button insert;
 		private System.Windows.Forms.ComboBox comboTT;
+		private System.Windows.Forms.Label label14;
 		private System.Windows.Forms.DataGridViewTextBoxColumn MaP;
 		private System.Windows.Forms.DataGridViewTextBoxColumn MaLP;
 		private System.Windows.Forms.DataGridViewTextBoxColumn TenLP;
@@ -512,6 +513,5 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn TienNghi;
 		private System.Windows.Forms.DataGridViewTextBoxColumn TrangThai;
 		private System.Windows.Forms.DataGridViewTextBoxColumn GiaMacDinh;
-		private System.Windows.Forms.Label label14;
 	}
 }

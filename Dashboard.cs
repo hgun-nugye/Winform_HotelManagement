@@ -52,7 +52,7 @@ namespace HotelManagement
 
 		private void Dashboard_FormClosed(object sender, FormClosedEventArgs e) => Application.Exit();
 
-		private void P101_Click(object sender, EventArgs e) => ShowRoomInfo(sender);
+
 		private void dsPhong_Click(object sender, EventArgs e) => NavigateTo(new PhongForm());
 
 		private void ShowRoomInfo(object sender)
@@ -136,10 +136,46 @@ namespace HotelManagement
 					break;
 			}
 		}
+		private void P101_Click(object sender, EventArgs e)
+		{
+			Button clickedButton = sender as Button;
+			Color buttonColor = clickedButton.BackColor;
 
+			if (buttonColor == Color.Gray)
+			{
+				DialogResult result = MessageBox.Show(
+					"Phòng này đang được dọn dẹp. Vui lòng quay lại sau.",
+					"Thông báo",
+					MessageBoxButtons.OKCancel,
+					MessageBoxIcon.Information
+				);
+
+				if (result == DialogResult.Cancel)
+				{
+					ShowRoomInfo(sender);
+				}
+			}
+			else
+			{
+				ShowRoomInfo(sender);
+			}
+		}
 		private void statis_Click(object sender, EventArgs e)
 		{
 
+		}
+
+		private void logout_Click(object sender, EventArgs e)
+		{
+			this.Hide();
+			var welcome=new Welcome();
+			welcome.ShowDialog();
+		}
+
+		private void report_Click(object sender, EventArgs e)
+		{
+			Form reportForm = new DoanhThuReport();
+			reportForm.ShowDialog();
 		}
 	}
 }

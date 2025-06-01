@@ -48,15 +48,16 @@
 			// 
 			// next
 			// 
-			this.next.BackColor = System.Drawing.Color.LightCyan;
-			this.next.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.next.Location = new System.Drawing.Point(888, 497);
+			this.next.BackColor = System.Drawing.Color.Teal;
+			this.next.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.next.ForeColor = System.Drawing.SystemColors.Window;
+			this.next.Location = new System.Drawing.Point(914, 529);
 			this.next.Name = "next";
-			this.next.Size = new System.Drawing.Size(211, 82);
+			this.next.Size = new System.Drawing.Size(168, 63);
 			this.next.TabIndex = 1;
-			this.next.Text = "Next";
+			this.next.Text = "Next →";
 			this.next.UseVisualStyleBackColor = false;
-			this.next.Click += new System.EventHandler(this.button1_Click);
+			this.next.Click += new System.EventHandler(this.next_Click);
 			// 
 			// Welcome
 			// 

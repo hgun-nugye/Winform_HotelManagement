@@ -97,7 +97,6 @@ namespace HotelManagement
 			string CCCD = textCCCD.Text;
 			string hoTen = textHoTen.Text;
 			string tongtien;
-			string uudai = textUuDai.Text;
 			string trangThai;
 
 			using (SqlConnection con = dc.GetConnect())
@@ -175,22 +174,20 @@ namespace HotelManagement
 				}
 
 				//show TongTien
-				string tongTienQuery = @"SELECT 
-										COALESCE(SUM(DATEDIFF(DAY, ctp.NgayNhan, ctp.NgayTra) * p.GiaMacDinh * 
-											(1 - ISNULL(u.MucGiam, 0) / 100)), 0) + 
-										COALESCE(SUM(DV.GiaDV * ctdv.SL_DV * (1 - ISNULL(UDV.MucGiam, 0) / 100)), 0) +
-										COALESCE(SUM(M.GiaMon * ctm.SL_Mon * (1 - ISNULL(UDM.MucGiam, 0) / 100)), 0) AS TotalCost
-									FROM CTHDPhong ctp
-									JOIN Phong p ON ctp.MaP = p.MaP
-									LEFT JOIN UuDai u ON ctp.MaUD = u.MaUD  
-									LEFT JOIN CTHDDichVu ctdv ON ctp.MaHDP = ctdv.MaHDDV
-									LEFT JOIN DichVu DV ON ctdv.MaDV = DV.MaDV
-									LEFT JOIN CTHDMon ctm ON ctp.MaHDP = ctm.MaHDM
-									LEFT JOIN Mon M ON ctm.MaMon = M.MaMon
-									LEFT JOIN UuDai UDV ON ctdv.MaUD = UDV.MaUD
-									LEFT JOIN UuDai UDM ON ctm.MaUD = UDM.MaUD
-									WHERE ctp.MaP = @MaP  
-									GROUP BY p.MaP;";
+				string tongTienQuery = @"SELECT COALESCE(
+								SUM(DATEDIFF(DAY, ctp.NgayNhan, ctp.NgayTra) * p.GiaMacDinh) +
+								COALESCE(SUM(DV.GiaDV * ctdv.SL_DV), 0) +
+								COALESCE(SUM(M.GiaMon * ctm.SL_Mon), 0),
+								0
+							) AS TotalCost
+							FROM CTHDPhong ctp
+							JOIN Phong p ON ctp.MaP = p.MaP
+							LEFT JOIN CTHDDichVu ctdv ON ctp.MaHDP = ctdv.MaHDDV
+							LEFT JOIN DichVu DV ON ctdv.MaDV = DV.MaDV
+							LEFT JOIN CTHDMon ctm ON ctp.MaHDP = ctm.MaHDM
+							LEFT JOIN Mon M On M.MaMon=ctm.MaMon
+							WHERE ctp.MaP = @MaP
+							GROUP BY p.MaP;";
 				using (SqlCommand cmd = new SqlCommand(tongTienQuery, con))
 				{
 					cmd.Parameters.AddWithValue("@MaP", maP);
@@ -228,7 +225,6 @@ namespace HotelManagement
 			string hoTen = textHoTen.Text;
 			DateTime ngayNhan;
 			string tongtien = textTongTien.Text;
-			string uudai = textUuDai.Text;
 			string trangThai = comboBoxTrangThai.SelectedItem.ToString();
 
 			if (!DateTime.TryParse(inputNgayTra.Text, out ngayTra))

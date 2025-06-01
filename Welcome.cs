@@ -21,13 +21,11 @@ namespace HotelManagement
 		{
 			Application.Exit();
 		}
-
-		private void button1_Click(object sender, EventArgs e)
+		private void next_Click(object sender, EventArgs e)
 		{
-
 			this.Hide();
-			var dashboard = new Dashboard();
-			dashboard.Show();
+			var login = new Login();
+			login.ShowDialog();
 		}
 	}
 }

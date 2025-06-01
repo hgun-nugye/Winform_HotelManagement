@@ -36,10 +36,6 @@
 			this.textTenMon = new System.Windows.Forms.TextBox();
 			this.label2 = new System.Windows.Forms.Label();
 			this.dataGridViewMon = new System.Windows.Forms.DataGridView();
-			this.Ma = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Ten = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.gia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.TrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.textMaMon = new System.Windows.Forms.TextBox();
 			this.label1 = new System.Windows.Forms.Label();
 			this.back = new System.Windows.Forms.Button();
@@ -49,6 +45,10 @@
 			this.comboTT = new System.Windows.Forms.ComboBox();
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.label14 = new System.Windows.Forms.Label();
+			this.Ma = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Ten = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.gia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.TrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridViewMon)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.SuspendLayout();
@@ -57,7 +57,7 @@
 			// 
 			this.inputFind.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
 			this.inputFind.Location = new System.Drawing.Point(520, 180);
-			this.inputFind.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.inputFind.Margin = new System.Windows.Forms.Padding(4);
 			this.inputFind.Multiline = true;
 			this.inputFind.Name = "inputFind";
 			this.inputFind.Size = new System.Drawing.Size(389, 41);
@@ -80,7 +80,7 @@
 			// 
 			this.textGiaMon.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.textGiaMon.Location = new System.Drawing.Point(643, 62);
-			this.textGiaMon.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.textGiaMon.Margin = new System.Windows.Forms.Padding(4);
 			this.textGiaMon.Multiline = true;
 			this.textGiaMon.Name = "textGiaMon";
 			this.textGiaMon.Size = new System.Drawing.Size(266, 33);
@@ -101,7 +101,7 @@
 			// 
 			this.textTenMon.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.textTenMon.Location = new System.Drawing.Point(164, 118);
-			this.textTenMon.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.textTenMon.Margin = new System.Windows.Forms.Padding(4);
 			this.textTenMon.Multiline = true;
 			this.textTenMon.Name = "textTenMon";
 			this.textTenMon.Size = new System.Drawing.Size(252, 30);
@@ -120,6 +120,7 @@
 			// 
 			// dataGridViewMon
 			// 
+			this.dataGridViewMon.AllowUserToOrderColumns = true;
 			this.dataGridViewMon.BackgroundColor = System.Drawing.Color.Ivory;
 			this.dataGridViewMon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dataGridViewMon.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -128,50 +129,18 @@
             this.gia,
             this.TrangThai});
 			this.dataGridViewMon.Location = new System.Drawing.Point(44, 238);
-			this.dataGridViewMon.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.dataGridViewMon.Margin = new System.Windows.Forms.Padding(4);
 			this.dataGridViewMon.Name = "dataGridViewMon";
 			this.dataGridViewMon.RowHeadersWidth = 62;
 			this.dataGridViewMon.Size = new System.Drawing.Size(437, 245);
 			this.dataGridViewMon.TabIndex = 16;
 			this.dataGridViewMon.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewMon_CellClick);
 			// 
-			// Ma
-			// 
-			this.Ma.DataPropertyName = "MaMon";
-			this.Ma.HeaderText = "Mã Món";
-			this.Ma.MinimumWidth = 8;
-			this.Ma.Name = "Ma";
-			this.Ma.Width = 80;
-			// 
-			// Ten
-			// 
-			this.Ten.DataPropertyName = "TenMon";
-			this.Ten.HeaderText = "Tên Món";
-			this.Ten.MinimumWidth = 8;
-			this.Ten.Name = "Ten";
-			this.Ten.Width = 150;
-			// 
-			// gia
-			// 
-			this.gia.DataPropertyName = "GiaMon";
-			this.gia.HeaderText = "Giá Món";
-			this.gia.MinimumWidth = 8;
-			this.gia.Name = "gia";
-			this.gia.Width = 70;
-			// 
-			// TrangThai
-			// 
-			this.TrangThai.DataPropertyName = "TrangThai";
-			this.TrangThai.HeaderText = "Trạng Thái";
-			this.TrangThai.MinimumWidth = 8;
-			this.TrangThai.Name = "TrangThai";
-			this.TrangThai.Width = 150;
-			// 
 			// textMaMon
 			// 
 			this.textMaMon.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.textMaMon.Location = new System.Drawing.Point(164, 62);
-			this.textMaMon.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.textMaMon.Margin = new System.Windows.Forms.Padding(4);
 			this.textMaMon.Multiline = true;
 			this.textMaMon.Name = "textMaMon";
 			this.textMaMon.Size = new System.Drawing.Size(252, 35);
@@ -275,6 +244,38 @@
 			this.label14.TabIndex = 68;
 			this.label14.Text = "DANH SÁCH MÓN";
 			// 
+			// Ma
+			// 
+			this.Ma.DataPropertyName = "MaMon";
+			this.Ma.HeaderText = "Mã Món";
+			this.Ma.MinimumWidth = 8;
+			this.Ma.Name = "Ma";
+			this.Ma.Width = 80;
+			// 
+			// Ten
+			// 
+			this.Ten.DataPropertyName = "TenMon";
+			this.Ten.HeaderText = "Tên Món";
+			this.Ten.MinimumWidth = 8;
+			this.Ten.Name = "Ten";
+			this.Ten.Width = 150;
+			// 
+			// gia
+			// 
+			this.gia.DataPropertyName = "GiaMon";
+			this.gia.HeaderText = "Giá Món";
+			this.gia.MinimumWidth = 8;
+			this.gia.Name = "gia";
+			this.gia.Width = 70;
+			// 
+			// TrangThai
+			// 
+			this.TrangThai.DataPropertyName = "TrangThai_Mon";
+			this.TrangThai.HeaderText = "Trạng Thái";
+			this.TrangThai.MinimumWidth = 8;
+			this.TrangThai.Name = "TrangThai";
+			this.TrangThai.Width = 150;
+			// 
 			// bangMon
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -332,10 +333,10 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn GiaMon;
 		private System.Windows.Forms.DataGridViewTextBoxColumn TrangThai_Mon;
 		private System.Windows.Forms.PictureBox pictureBox1;
+		private System.Windows.Forms.Label label14;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Ma;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Ten;
 		private System.Windows.Forms.DataGridViewTextBoxColumn gia;
 		private System.Windows.Forms.DataGridViewTextBoxColumn TrangThai;
-		private System.Windows.Forms.Label label14;
 	}
 }

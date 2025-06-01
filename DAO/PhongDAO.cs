@@ -137,7 +137,7 @@ namespace HotelManagement.DAO
 			}
 			finally
 			{
-				con.Close(); // Ensure the connection is closed
+				con.Close(); 
 			}
 			return true;
 		}
@@ -221,7 +221,7 @@ namespace HotelManagement.DAO
 		public DataTable FindBySoGiuong(string cons)
 		{
 			string sql = @"SELECT P.MaP, P.MaLP, P.TrangThai, P.GiaMacDinh, 
-                          L.TenLP, L.SucChua, L.SoGiuong, L.DienTich, L.TienNghi 
+                          L.TenLP, L.SucChua as SucChua, L.SoGiuong, L.DienTich, L.TienNghi 
                    FROM Phong P 
                    JOIN LoaiPhong L ON P.MaLP = L.MaLP ";
 
