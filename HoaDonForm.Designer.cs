@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
 			this.components = new System.ComponentModel.Container();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.label7 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
 			this.label1 = new System.Windows.Forms.Label();
@@ -38,6 +39,13 @@
 			this.label8 = new System.Windows.Forms.Label();
 			this.label9 = new System.Windows.Forms.Label();
 			this.dataGridViewHD = new System.Windows.Forms.DataGridView();
+			this.MaHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.MaKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.MaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.MaLoaiHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.NgayXuatHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.TrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.ThanhTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.hoaDonBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.inputFind = new System.Windows.Forms.TextBox();
 			this.delete = new System.Windows.Forms.Button();
@@ -53,13 +61,6 @@
 			this.textMaKH = new System.Windows.Forms.TextBox();
 			this.TongHD = new System.Windows.Forms.TextBox();
 			this.label6 = new System.Windows.Forms.Label();
-			this.MaHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.MaKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.MaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.MaLoaiHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.NgayXuatHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.TrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.ThanhTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridViewHD)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.hoaDonBindingSource)).BeginInit();
 			this.SuspendLayout();
@@ -147,6 +148,14 @@
 			// dataGridViewHD
 			// 
 			this.dataGridViewHD.BackgroundColor = System.Drawing.Color.Ivory;
+			dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+			dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+			dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+			dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+			dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+			dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.dataGridViewHD.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
 			this.dataGridViewHD.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dataGridViewHD.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaHD,
@@ -166,6 +175,69 @@
 			this.dataGridViewHD.TabIndex = 54;
 			this.dataGridViewHD.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewHD_CellClick);
 			this.dataGridViewHD.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewHD_CellClick);
+			// 
+			// MaHD
+			// 
+			this.MaHD.DataPropertyName = "MaHD";
+			this.MaHD.HeaderText = "Mã Hóa đơn";
+			this.MaHD.MinimumWidth = 8;
+			this.MaHD.Name = "MaHD";
+			this.MaHD.ReadOnly = true;
+			this.MaHD.Width = 120;
+			// 
+			// MaKH
+			// 
+			this.MaKH.DataPropertyName = "MaKH";
+			this.MaKH.HeaderText = "Mã Khách hàng";
+			this.MaKH.MinimumWidth = 8;
+			this.MaKH.Name = "MaKH";
+			this.MaKH.ReadOnly = true;
+			this.MaKH.Width = 120;
+			// 
+			// MaNV
+			// 
+			this.MaNV.DataPropertyName = "MaNV";
+			this.MaNV.HeaderText = "Mã nhân viên";
+			this.MaNV.MinimumWidth = 8;
+			this.MaNV.Name = "MaNV";
+			this.MaNV.ReadOnly = true;
+			this.MaNV.Width = 120;
+			// 
+			// MaLoaiHD
+			// 
+			this.MaLoaiHD.DataPropertyName = "MaLoaiHD";
+			this.MaLoaiHD.HeaderText = "Mã loại Hóa đơn";
+			this.MaLoaiHD.MinimumWidth = 8;
+			this.MaLoaiHD.Name = "MaLoaiHD";
+			this.MaLoaiHD.ReadOnly = true;
+			this.MaLoaiHD.Width = 150;
+			// 
+			// NgayXuatHD
+			// 
+			this.NgayXuatHD.DataPropertyName = "NgayXuatHD";
+			this.NgayXuatHD.HeaderText = "Ngày xuất";
+			this.NgayXuatHD.MinimumWidth = 8;
+			this.NgayXuatHD.Name = "NgayXuatHD";
+			this.NgayXuatHD.ReadOnly = true;
+			this.NgayXuatHD.Width = 150;
+			// 
+			// TrangThai
+			// 
+			this.TrangThai.DataPropertyName = "TrangThai";
+			this.TrangThai.HeaderText = "Trạng thái thanh toán";
+			this.TrangThai.MinimumWidth = 8;
+			this.TrangThai.Name = "TrangThai";
+			this.TrangThai.ReadOnly = true;
+			this.TrangThai.Width = 180;
+			// 
+			// ThanhTien
+			// 
+			this.ThanhTien.DataPropertyName = "TongHoaDon";
+			this.ThanhTien.HeaderText = "Tổng Hóa đơn";
+			this.ThanhTien.MinimumWidth = 6;
+			this.ThanhTien.Name = "ThanhTien";
+			this.ThanhTien.ReadOnly = true;
+			this.ThanhTien.Width = 125;
 			// 
 			// inputFind
 			// 
@@ -321,69 +393,6 @@
 			this.label6.Size = new System.Drawing.Size(115, 18);
 			this.label6.TabIndex = 76;
 			this.label6.Text = "Tổng Hóa đơn";
-			// 
-			// MaHD
-			// 
-			this.MaHD.DataPropertyName = "MaHD";
-			this.MaHD.HeaderText = "Mã Hóa đơn";
-			this.MaHD.MinimumWidth = 8;
-			this.MaHD.Name = "MaHD";
-			this.MaHD.ReadOnly = true;
-			this.MaHD.Width = 120;
-			// 
-			// MaKH
-			// 
-			this.MaKH.DataPropertyName = "MaKH";
-			this.MaKH.HeaderText = "Mã Khách hàng";
-			this.MaKH.MinimumWidth = 8;
-			this.MaKH.Name = "MaKH";
-			this.MaKH.ReadOnly = true;
-			this.MaKH.Width = 120;
-			// 
-			// MaNV
-			// 
-			this.MaNV.DataPropertyName = "MaNV";
-			this.MaNV.HeaderText = "Mã nhân viên";
-			this.MaNV.MinimumWidth = 8;
-			this.MaNV.Name = "MaNV";
-			this.MaNV.ReadOnly = true;
-			this.MaNV.Width = 120;
-			// 
-			// MaLoaiHD
-			// 
-			this.MaLoaiHD.DataPropertyName = "MaLoaiHD";
-			this.MaLoaiHD.HeaderText = "Mã loại Hóa đơn";
-			this.MaLoaiHD.MinimumWidth = 8;
-			this.MaLoaiHD.Name = "MaLoaiHD";
-			this.MaLoaiHD.ReadOnly = true;
-			this.MaLoaiHD.Width = 150;
-			// 
-			// NgayXuatHD
-			// 
-			this.NgayXuatHD.DataPropertyName = "NgayXuatHD";
-			this.NgayXuatHD.HeaderText = "Ngày xuất";
-			this.NgayXuatHD.MinimumWidth = 8;
-			this.NgayXuatHD.Name = "NgayXuatHD";
-			this.NgayXuatHD.ReadOnly = true;
-			this.NgayXuatHD.Width = 150;
-			// 
-			// TrangThai
-			// 
-			this.TrangThai.DataPropertyName = "TrangThai";
-			this.TrangThai.HeaderText = "Trạng thái thanh toán";
-			this.TrangThai.MinimumWidth = 8;
-			this.TrangThai.Name = "TrangThai";
-			this.TrangThai.ReadOnly = true;
-			this.TrangThai.Width = 180;
-			// 
-			// ThanhTien
-			// 
-			this.ThanhTien.DataPropertyName = "TongHoaDon";
-			this.ThanhTien.HeaderText = "Tổng Hóa đơn";
-			this.ThanhTien.MinimumWidth = 6;
-			this.ThanhTien.Name = "ThanhTien";
-			this.ThanhTien.ReadOnly = true;
-			this.ThanhTien.Width = 125;
 			// 
 			// HoaDonForm
 			// 

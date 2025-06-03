@@ -51,7 +51,14 @@ namespace HotelManagement
 				return;
 			}
 
-			// Ràng buộc ngày trả không nhỏ hơn ngày nhận và không lớn hơn ngày hiện tại
+			// Ràng buộc ngày đặt không lớn hơn ngày hiện tại
+			if (ngayDat > DateTime.Now)
+			{
+				MessageBox.Show("Ngày đặt không được lớn hơn ngày hiện tại.");
+				return;
+			}
+
+			// Ràng buộc ngày dùng không nhỏ hơn ngày đặt và không lớn hơn ngày hiện tại
 			if (ngayDung < ngayDat)
 			{
 				MessageBox.Show("Ngày dùng không được nhỏ hơn ngày đặt.");
@@ -71,12 +78,13 @@ namespace HotelManagement
 				string maKHSql = @" SELECT MaKH FROM KhachHang WHERE CCCD = @cccd";
 
 				string maKH = null;
+				conn.Open();
 
 				using (SqlCommand cmd = new SqlCommand(maKHSql, conn))
 				{
 					cmd.Parameters.AddWithValue("@cccd", cccd); // Sử dụng cccd đã được truyền vào
 
-					conn.Open();
+
 					var result = cmd.ExecuteScalar();
 					if (result != null)
 					{
@@ -110,7 +118,6 @@ namespace HotelManagement
 				{
 					cmd.Parameters.AddWithValue("@tenMon", comboTenMon.Text); // tenMon là tên món bạn đã có
 
-					conn.Open();
 					var result = cmd.ExecuteScalar();
 					if (result != null)
 					{
@@ -119,44 +126,62 @@ namespace HotelManagement
 				}
 
 				// Kiểm tra xem có tìm thấy MaMon không trước khi chèn vào CTHDMon
-				string generatedMaCTHDMon = null;
+				string generatedMaCTHDM = null;
 				if (maMon != null)
 				{
 
 					// Insert into CTHDMon and retrieve MaCTHDMon
-					string cthdMonSql = @"INSERT INTO CTHDMon (MaCTHDMon, MaHDMon, MaMon, SL_Mon, MaP, NgaySD, TrangThai) 
-										 OUTPUT INSERTED.MaCTHDMon
-										VALUES (dbo.GenerateMaCTHDMon(), @maHDMon, @maMon, @slMon, @maP, @ngaySD, @trangThai)";
+					string cthdMonSql = @"INSERT INTO CTHDMon (MaCTHDM, MaHDM, MaMon, SL_Mon, MaP, NgaySD, TrangThai) 
+										 OUTPUT INSERTED.MaCTHDM
+										VALUES (dbo.GenerateMaCTHDM(), @maHDM, @maMon, @slMon, @maP, @ngaySD, @trangThai)";
 
 					using (SqlCommand cmd = new SqlCommand(cthdMonSql, conn))
 					{
-						cmd.Parameters.AddWithValue("@maHDMon", generatedMaHDMon); // MaHDMon đã được tạo
+						cmd.Parameters.AddWithValue("@maHDM", generatedMaHDMon); // MaHDMon đã được tạo
 						cmd.Parameters.AddWithValue("@maMon", maMon); // Mã món
 						cmd.Parameters.AddWithValue("@slMon", soLuong.Text); // Số lượng món
 						cmd.Parameters.AddWithValue("@maP", maPhong.Text); // Mã phòng
 						cmd.Parameters.AddWithValue("@ngaySD", ngaySD.Text); // Ngày sử dụng món
 						cmd.Parameters.AddWithValue("@trangThai", comboTT.Text); // Trạng thái
 
-						generatedMaCTHDMon = (string)cmd.ExecuteScalar(); // Lấy MaCTHDMon
+						generatedMaCTHDM = (string)cmd.ExecuteScalar(); // Lấy MaCTHDMon
 
 					}
 				}
 
-				// Insert into HoaDon and retrieve MaHD
-				string hoaDonSql = @"
-									INSERT INTO HoaDon (MaHD, MaKH, MaNV, MaLoaiHD, NgayXuatHD, MaUD, TrangThai) 
-									OUTPUT INSERTED.MaHD 
-									VALUES (dbo.GenerateMaHD(), @maKH, 'NV002', @maLoaiHD, NULL, NULL, @trangThai)";
+				// Lấy MaHD 
+				string maHDQuery = @"select HoaDon.MaHD from HoaDon join HoaDonPhong on HoaDonPhong.MaKH=HoaDon.MaKH 
+									join CTHDPhong on CTHDPhong.MaHDP=HoaDonPhong.MaHDP
+									WHERE HoaDon.MaKH = @maKH";
 
-				string generatedMaHD = null;
+				string maHD = null;
+
+				using (SqlCommand cmd = new SqlCommand(maHDQuery, conn))
+				{
+					cmd.Parameters.AddWithValue("@maKH", maKH);
+					cmd.Parameters.AddWithValue("@maP", maPhong.Text); // Số phòng
+
+					var result = cmd.ExecuteScalar();
+					if (result != null)
+					{
+						maHD = result.ToString(); // Lấy MaHD
+					}
+				}
+
+				// Tạo hóa đơn mới
+				string hoaDonSql = @"
+									INSERT INTO HoaDon (MaHD, MaKH, MaNV, MaLoaiHD, NgayXuatHD, TrangThai) 
+									OUTPUT INSERTED.MaHD 
+									VALUES (@maHD, @maKH, 'NV002', @maLoaiHD, NULL, @trangThai)";
 
 				using (SqlCommand cmd = new SqlCommand(hoaDonSql, conn))
 				{
+					cmd.Parameters.AddWithValue("@maHD", maHD);
 					cmd.Parameters.AddWithValue("@maKH", maKH);
 					cmd.Parameters.AddWithValue("@maLoaiHD", generatedMaHDMon);
 					cmd.Parameters.AddWithValue("@trangThai", comboTT.Text);
 
-					generatedMaHD = (string)cmd.ExecuteScalar(); // Get generated MaHD
+					cmd.ExecuteNonQuery();
 				}
 
 				// Insert into CTHoaDon
@@ -165,10 +190,10 @@ namespace HotelManagement
 
 				using (SqlCommand cmd = new SqlCommand(CTHD, conn))
 				{
-					cmd.Parameters.AddWithValue("@maHD", generatedMaHD);
+					cmd.Parameters.AddWithValue("@maHD", maHD);
 					cmd.Parameters.AddWithValue("@maLoaiHD", generatedMaHDMon); // Use the generated MaHDMon
 					cmd.Parameters.AddWithValue("@maKH", maKH);
-					cmd.Parameters.AddWithValue("@maLoaiCTHD", generatedMaCTHDMon); // Use the generated MaCTHDMon
+					cmd.Parameters.AddWithValue("@maLoaiCTHD", generatedMaCTHDM); // Use the generated MaCTHDMon
 
 					cmd.ExecuteNonQuery();
 					MessageBox.Show("Cập nhật thành công!");

@@ -39,7 +39,6 @@ namespace HotelManagement
 			}
 		}
 
-		//insert dữ liệu vào table HDDV
 		private void InsertHDDV(object sender, EventArgs e)
 		{
 			DateTime ngayDat = DateTime.Now;
@@ -52,7 +51,14 @@ namespace HotelManagement
 				return;
 			}
 
-			// Ràng buộc ngày trả không nhỏ hơn ngày nhận và không lớn hơn ngày hiện tại
+			// Ràng buộc ngày đặt không lớn hơn ngày hiện tại
+			if (ngayDat > DateTime.Now)
+			{
+				MessageBox.Show("Ngày đặt không được lớn hơn ngày hiện tại.");
+				return;
+			}
+
+			// Ràng buộc ngày dùng không nhỏ hơn ngày đặt và không lớn hơn ngày hiện tại
 			if (ngayDung < ngayDat)
 			{
 				MessageBox.Show("Ngày dùng không được nhỏ hơn ngày đặt.");
@@ -61,7 +67,7 @@ namespace HotelManagement
 
 
 			// Kiểm tra và chuyển đổi chuỗi ngày sang DateTime			
-			if (!DateTime.TryParse(NgayDat.Text, out ngayDat))
+			if (!DateTime.TryParse(this.NgayDat.Text, out ngayDat))
 			{
 				MessageBox.Show("Ngày đặt không hợp lệ.");
 				return;
@@ -72,12 +78,13 @@ namespace HotelManagement
 				string maKHSql = @" SELECT MaKH FROM KhachHang WHERE CCCD = @cccd";
 
 				string maKH = null;
+				conn.Open();
 
 				using (SqlCommand cmd = new SqlCommand(maKHSql, conn))
 				{
 					cmd.Parameters.AddWithValue("@cccd", cccd); // Sử dụng cccd đã được truyền vào
 
-					conn.Open();
+
 					var result = cmd.ExecuteScalar();
 					if (result != null)
 					{
@@ -85,61 +92,146 @@ namespace HotelManagement
 					}
 				}
 
-				// Insert into table HHDV and retrieve MaHDDV
-				string hoaDonDVSql = @"
+				// Insert into table HDDV and retrieve MaHDDV
+				string hoaDonDichVuSql = @"
 									INSERT INTO HoaDonDV (MaHDDV, MaKH, MaNV, NgayDat) 
-									OUTPUT INSERTED.MaHDDV 
+									OUTPUT INSERTED.MaHDDV
 									VALUES (dbo.GenerateMaHDDV(), @maKH, @maNV, @ngayDat)";
 
 				string generatedMaHDDV = null;
 
-				using (SqlCommand cmd = new SqlCommand(hoaDonDVSql, conn))
+				using (SqlCommand cmd = new SqlCommand(hoaDonDichVuSql, conn))
 				{
 					cmd.Parameters.AddWithValue("@maKH", maKH);
 					cmd.Parameters.AddWithValue("@maNV", "NV002");
-					cmd.Parameters.AddWithValue("@ngayDat", NgayDat);
+					cmd.Parameters.AddWithValue("@ngayDat", ngayDat);
 
 					generatedMaHDDV = (string)cmd.ExecuteScalar(); // Lấy MaHDDV
 				}
 
-				// Lấy MaDV từ tên dịch vụ
-				string maDVSql = @"SELECT MaDV FROM DichVu WHERE TenDV = @tenDV";
+				// Lấy MaDichVu từ tên dịch vụ
+				string maDichVuSql = @"SELECT MaDV FROM DichVu WHERE TenDV = @tenDichVu";
 
-				string maDV = null;
+				string maDichVu = null;
 
-				using (SqlCommand cmd = new SqlCommand(maDVSql, conn))
+				using (SqlCommand cmd = new SqlCommand(maDichVuSql, conn))
 				{
-					cmd.Parameters.AddWithValue("@tenDV", comboTenDV.Text); // tenDV là tên dịch vụ bạn đã có
+					cmd.Parameters.AddWithValue("@tenDichVu", comboTenDV.Text); // tenDichVu là tên dịch vụ bạn đã có
 
-					conn.Open();
 					var result = cmd.ExecuteScalar();
 					if (result != null)
 					{
-						maDV = result.ToString(); // Lấy MaDV
+						maDichVu = result.ToString(); // Lấy MaDichVu
 					}
 				}
 
-				// Kiểm tra xem có tìm thấy MaDV không trước khi chèn vào CTHDDichVu
-				if (maDV != null)
+				int soLuongValue;
+
+				// Insert into CTHDDV
+				//string generatedMaCTHDDV;
+				//string cthdDichVuSql = @"INSERT INTO CTHDDichVu (MaCTHDDV, MaHDDV, MaDV, SL_DV, MaP, NgaySD, TrangThai) 
+				//						VALUES (dbo.GenerateMaCTHDDV(), @maHDDV, @maDichVu, @slDichVu, @maP, @ngaySD, @trangThai)";
+
+				//using (SqlCommand cmd = new SqlCommand(cthdDichVuSql, conn))
+				//{
+				//	cmd.Parameters.AddWithValue("@maHDDV", generatedMaHDDV); // MaHDDV đã được tạo
+				//	cmd.Parameters.AddWithValue("@maDichVu", maDichVu); // Mã dịch vụ
+				if (!int.TryParse(soLuong.Text, out soLuongValue))
 				{
+					MessageBox.Show("Số lượng dịch vụ phải là một số hợp lệ.");
+					return;
+				}
+				//	cmd.Parameters.AddWithValue("@slDichVu", soLuongValue); // Số lượng dịch vụ
+				//	cmd.Parameters.AddWithValue("@maP", maPhong.Text); // Mã phòng
+				//	cmd.Parameters.AddWithValue("@ngaySD", ngaySD.Text); // Ngày sử dụng dịch vụ
+				//	cmd.Parameters.AddWithValue("@trangThai", comboTT.Text); // Trạng thái
+				//	//generatedMaCTHDDV = (string)cmd.ExecuteScalar(); // Lấy MaCTHDDV bị lỗi gì đấy chưa fix được
+				//	cmd.ExecuteNonQuery();
 
-					// Insert into CTHDDichVu and retrieve MaCTHDDV
-					string cthdDichVuSql = @"INSERT INTO CTHDDichVu (MaCTHDDV, MaHDDV, MaDV, SL_DV, MaP, NgaySD, TrangThai) 
-										VALUES (dbo.GenerateMaCTHDDV(), @maHDDV, @maDV, @slDV, @maP, @ngaySD, @trangThai)";
+				//}
 
-					using (SqlCommand cmd = new SqlCommand(cthdDichVuSql, conn))
+				string cthdDichVuSql = @"INSERT INTO CTHDDichVu (MaCTHDDV, MaHDDV, MaDV, SL_DV, MaP, NgaySD, TrangThai) 
+                        VALUES ((SELECT dbo.GenerateMaCTHDDV()), @maHDDV, @maDichVu, @slDichVu, @maP, @ngaySD, @trangThai)";
+
+				using (SqlCommand cmd = new SqlCommand(cthdDichVuSql, conn))
+				{
+					cmd.Parameters.AddWithValue("@maHDDV", generatedMaHDDV);
+					cmd.Parameters.AddWithValue("@maDichVu", maDichVu);
+					cmd.Parameters.AddWithValue("@slDichVu", soLuongValue);
+					cmd.Parameters.AddWithValue("@maP", maPhong.Text);
+					cmd.Parameters.AddWithValue("@ngaySD", DateTime.Parse(ngaySD.Text));
+					cmd.Parameters.AddWithValue("@trangThai", comboTT.Text);
+					cmd.ExecuteNonQuery();
+				}
+
+
+				// Lấy MaHD 
+				string maHDQuery = @"select HoaDon.MaHD from HoaDon join HoaDonPhong on HoaDonPhong.MaKH=HoaDon.MaKH 
+									join CTHDPhong on CTHDPhong.MaHDP=HoaDonPhong.MaHDP
+									WHERE HoaDon.MaKH = @maKH";
+
+				string maHD = null;
+
+				using (SqlCommand cmd = new SqlCommand(maHDQuery, conn))
+				{
+					cmd.Parameters.AddWithValue("@maKH", maKH);
+					cmd.Parameters.AddWithValue("@maP", maPhong.Text); // Số phòng
+
+					var result = cmd.ExecuteScalar();
+					if (result != null)
 					{
-						cmd.Parameters.AddWithValue("@maHDDV", generatedMaHDDV); // MaHDDV đã được tạo
-						cmd.Parameters.AddWithValue("@maDV", maDV); // Mã dịch vụ
-						cmd.Parameters.AddWithValue("@slDV", soLuong.Text); // Số lượng dịch vụ
-						cmd.Parameters.AddWithValue("@maP", maPhong.Text); // Mã phòng
-						cmd.Parameters.AddWithValue("@ngaySD", ngaySD.Text); // Ngày sử dụng dịch vụ
-						cmd.Parameters.AddWithValue("@trangThai", comboTT.Text); // Trạng thái
-
-						cmd.ExecuteNonQuery(); // Thực thi câu lệnh
+						maHD = result.ToString(); // Lấy MaHD
 					}
 				}
-				MessageBox.Show("Thêm dịch vụ thành công!");
+
+				// Tạo hóa đơn mới
+				string hoaDonSql = @"
+									INSERT INTO HoaDon (MaHD, MaKH, MaNV, MaLoaiHD, NgayXuatHD, TrangThai) 
+									OUTPUT INSERTED.MaHD 
+									VALUES (@maHD, @maKH, 'NV002', @maLoaiHD, NULL, @trangThai)";
+
+				using (SqlCommand cmd = new SqlCommand(hoaDonSql, conn))
+				{
+					cmd.Parameters.AddWithValue("@maHD", maHD);
+					cmd.Parameters.AddWithValue("@maKH", maKH);
+					cmd.Parameters.AddWithValue("@maLoaiHD", generatedMaHDDV);
+
+					cmd.Parameters.AddWithValue("@trangThai", comboTT.Text);
+
+					cmd.ExecuteNonQuery();
+				}
+
+				// Lấy MaCTHDDV
+				string CTHDDVQuery = @"select CTHDDichVu.MaCTHDDV from CTHDDichVu
+										where CTHDDichVu.MaHDDV=@maHDDV";
+
+				string maCTDV = null;
+
+				using (SqlCommand cmd = new SqlCommand(CTHDDVQuery, conn))
+				{
+					cmd.Parameters.AddWithValue("@maHDDV", generatedMaHDDV); // tenDichVu là tên dịch vụ bạn đã có
+
+					var result = cmd.ExecuteScalar();
+					if (result != null)
+					{
+						maCTDV = result.ToString(); // Lấy MaCTHDDichVu
+					}
+				}
+
+				// Insert into CTHoaDon
+				string CTHD = "INSERT INTO CTHD (MaCTHD, MaHD, MaLoaiHD, MaKH, MaLoaiCTHD) VALUES" +
+							 "(dbo.GenerateMaCTHD(), @maHD, @maLoaiHD, @maKH,@maLoaiCTHD)";
+
+				using (SqlCommand cmd = new SqlCommand(CTHD, conn))
+				{
+					cmd.Parameters.AddWithValue("@maHD", maHD);
+					cmd.Parameters.AddWithValue("@maLoaiHD", generatedMaHDDV); // Use the generated MaHDDV
+					cmd.Parameters.AddWithValue("@maKH", maKH);
+					cmd.Parameters.AddWithValue("@maLoaiCTHD", maCTDV);
+
+					cmd.ExecuteNonQuery();
+					MessageBox.Show("Cập nhật thành công!");
+				}
 			}
 		}
 

@@ -263,7 +263,7 @@
 			// 
 			// listPhong
 			// 
-			this.listPhong.DropDownHeight = 200;
+			this.listPhong.DropDownHeight = 300;
 			this.listPhong.FormattingEnabled = true;
 			this.listPhong.IntegralHeight = false;
 			this.listPhong.Location = new System.Drawing.Point(197, 220);

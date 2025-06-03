@@ -42,10 +42,9 @@
 			this.insert = new System.Windows.Forms.Button();
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.label14 = new System.Windows.Forms.Label();
-			this.soLuong = new System.Windows.Forms.NumericUpDown();
 			this.maPhong = new System.Windows.Forms.Button();
+			this.soLuong = new System.Windows.Forms.TextBox();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.soLuong)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// label2
@@ -200,20 +199,9 @@
 			this.label14.ImeMode = System.Windows.Forms.ImeMode.NoControl;
 			this.label14.Location = new System.Drawing.Point(142, 44);
 			this.label14.Name = "label14";
-			this.label14.Size = new System.Drawing.Size(248, 39);
+			this.label14.Size = new System.Drawing.Size(238, 38);
 			this.label14.TabIndex = 65;
 			this.label14.Text = "ĐẶT DỊCH VỤ";
-			// 
-			// soLuong
-			// 
-			this.soLuong.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.soLuong.Location = new System.Drawing.Point(214, 304);
-			this.soLuong.Margin = new System.Windows.Forms.Padding(4);
-			this.soLuong.MaximumSize = new System.Drawing.Size(234, 0);
-			this.soLuong.MinimumSize = new System.Drawing.Size(234, 0);
-			this.soLuong.Name = "soLuong";
-			this.soLuong.Size = new System.Drawing.Size(234, 27);
-			this.soLuong.TabIndex = 82;
 			// 
 			// maPhong
 			// 
@@ -228,14 +216,24 @@
 			this.maPhong.Text = "Mã phòng";
 			this.maPhong.UseVisualStyleBackColor = false;
 			// 
+			// soLuong
+			// 
+			this.soLuong.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.soLuong.Location = new System.Drawing.Point(211, 307);
+			this.soLuong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+			this.soLuong.Multiline = true;
+			this.soLuong.Name = "soLuong";
+			this.soLuong.Size = new System.Drawing.Size(237, 25);
+			this.soLuong.TabIndex = 84;
+			// 
 			// AddHDDV
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.Azure;
 			this.ClientSize = new System.Drawing.Size(982, 507);
-			this.Controls.Add(this.maPhong);
 			this.Controls.Add(this.soLuong);
+			this.Controls.Add(this.maPhong);
 			this.Controls.Add(this.label14);
 			this.Controls.Add(this.pictureBox1);
 			this.Controls.Add(this.back);
@@ -255,7 +253,6 @@
 			this.Text = "Thêm Hóa đơn Dịch vụ";
 			this.Load += new System.EventHandler(this.AddHDDV_Load);
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.soLuong)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -275,7 +272,7 @@
 		private System.Windows.Forms.Button insert;
 		private System.Windows.Forms.PictureBox pictureBox1;
 		private System.Windows.Forms.Label label14;
-		private System.Windows.Forms.NumericUpDown soLuong;
 		private System.Windows.Forms.Button maPhong;
+		private System.Windows.Forms.TextBox soLuong;
 	}
 }

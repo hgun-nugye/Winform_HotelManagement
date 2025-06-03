@@ -87,7 +87,9 @@
 			// 
 			// comboTT
 			// 
+			this.comboTT.DropDownHeight = 200;
 			this.comboTT.FormattingEnabled = true;
+			this.comboTT.IntegralHeight = false;
 			this.comboTT.Items.AddRange(new object[] {
             "Chưa thanh toán",
             "Đã thanh toán"});
@@ -99,7 +101,9 @@
 			// 
 			// listPhong
 			// 
+			this.listPhong.DropDownHeight = 300;
 			this.listPhong.FormattingEnabled = true;
+			this.listPhong.IntegralHeight = false;
 			this.listPhong.Location = new System.Drawing.Point(191, 451);
 			this.listPhong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.listPhong.Name = "listPhong";

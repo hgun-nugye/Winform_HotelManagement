@@ -28,6 +28,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.button1 = new System.Windows.Forms.Button();
 			this.button3 = new System.Windows.Forms.Button();
 			this.textThanhTien = new System.Windows.Forms.TextBox();
@@ -40,7 +41,6 @@
 			this.textMaHDP = new System.Windows.Forms.TextBox();
 			this.label1 = new System.Windows.Forms.Label();
 			this.dataGridViewHDP = new System.Windows.Forms.DataGridView();
-			this.label14 = new System.Windows.Forms.Label();
 			this.MaHDP = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.MaP = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.TenLP = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,6 +51,7 @@
 			this.NgayTra = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.TrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.ThanhTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.label14 = new System.Windows.Forms.Label();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridViewHDP)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -181,6 +182,14 @@
 			// 
 			this.dataGridViewHDP.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
 			this.dataGridViewHDP.BackgroundColor = System.Drawing.Color.Ivory;
+			dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+			dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+			dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+			dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+			dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+			dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.dataGridViewHDP.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
 			this.dataGridViewHDP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dataGridViewHDP.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaHDP,
@@ -201,6 +210,85 @@
 			this.dataGridViewHDP.TabIndex = 69;
 			this.dataGridViewHDP.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewHDP_CellClick);
 			// 
+			// MaHDP
+			// 
+			this.MaHDP.DataPropertyName = "MaHDP";
+			this.MaHDP.HeaderText = "Mã Hóa đơn Phòng";
+			this.MaHDP.MinimumWidth = 8;
+			this.MaHDP.Name = "MaHDP";
+			this.MaHDP.Width = 114;
+			// 
+			// MaP
+			// 
+			this.MaP.DataPropertyName = "MaP";
+			this.MaP.HeaderText = "Mã Phòng";
+			this.MaP.MinimumWidth = 8;
+			this.MaP.Name = "MaP";
+			this.MaP.Width = 97;
+			// 
+			// TenLP
+			// 
+			this.TenLP.DataPropertyName = "TenLP";
+			this.TenLP.HeaderText = "Tên loại phòng";
+			this.TenLP.MinimumWidth = 8;
+			this.TenLP.Name = "TenLP";
+			this.TenLP.Width = 128;
+			// 
+			// MaNV
+			// 
+			this.MaNV.DataPropertyName = "MaNV";
+			this.MaNV.HeaderText = "Mã Nhân viên";
+			this.MaNV.MinimumWidth = 8;
+			this.MaNV.Name = "MaNV";
+			this.MaNV.Width = 119;
+			// 
+			// MaKH
+			// 
+			this.MaKH.DataPropertyName = "MaKH";
+			this.MaKH.HeaderText = "Mã Khách hàng";
+			this.MaKH.MinimumWidth = 8;
+			this.MaKH.Name = "MaKH";
+			this.MaKH.Width = 129;
+			// 
+			// NgayDat
+			// 
+			this.NgayDat.DataPropertyName = "NgayDat";
+			this.NgayDat.HeaderText = "Ngày Đặt";
+			this.NgayDat.MinimumWidth = 8;
+			this.NgayDat.Name = "NgayDat";
+			this.NgayDat.Width = 92;
+			// 
+			// NgayNhan
+			// 
+			this.NgayNhan.DataPropertyName = "NgayNhan";
+			this.NgayNhan.HeaderText = "Ngày nhận";
+			this.NgayNhan.MinimumWidth = 8;
+			this.NgayNhan.Name = "NgayNhan";
+			this.NgayNhan.Width = 101;
+			// 
+			// NgayTra
+			// 
+			this.NgayTra.DataPropertyName = "NgayTra";
+			this.NgayTra.HeaderText = "NgayTra";
+			this.NgayTra.MinimumWidth = 8;
+			this.NgayTra.Name = "NgayTra";
+			this.NgayTra.Width = 97;
+			// 
+			// TrangThai
+			// 
+			this.TrangThai.DataPropertyName = "TrangThai";
+			this.TrangThai.HeaderText = "Trạng thái";
+			this.TrangThai.MinimumWidth = 8;
+			this.TrangThai.Name = "TrangThai";
+			this.TrangThai.Width = 98;
+			// 
+			// ThanhTien
+			// 
+			this.ThanhTien.DataPropertyName = "Thành Tiền";
+			this.ThanhTien.HeaderText = "Thành tiền";
+			this.ThanhTien.MinimumWidth = 8;
+			this.ThanhTien.Name = "ThanhTien";
+			// 
 			// label14
 			// 
 			this.label14.AutoSize = true;
@@ -211,86 +299,6 @@
 			this.label14.Size = new System.Drawing.Size(231, 29);
 			this.label14.TabIndex = 82;
 			this.label14.Text = "HÓA ĐƠN PHÒNG";
-			// 
-			// MaHDP
-			// 
-			this.MaHDP.DataPropertyName = "MaHDP";
-			this.MaHDP.HeaderText = "Mã Hóa đơn Phòng";
-			this.MaHDP.MinimumWidth = 8;
-			this.MaHDP.Name = "MaHDP";
-			this.MaHDP.Width = 104;
-			// 
-			// MaP
-			// 
-			this.MaP.DataPropertyName = "MaP";
-			this.MaP.HeaderText = "Mã Phòng";
-			this.MaP.MinimumWidth = 8;
-			this.MaP.Name = "MaP";
-			this.MaP.Width = 90;
-			// 
-			// TenLP
-			// 
-			this.TenLP.DataPropertyName = "TenLP";
-			this.TenLP.HeaderText = "Tên loại phòng";
-			this.TenLP.MinimumWidth = 8;
-			this.TenLP.Name = "TenLP";
-			this.TenLP.Width = 116;
-			// 
-			// MaNV
-			// 
-			this.MaNV.DataPropertyName = "MaNV";
-			this.MaNV.HeaderText = "Mã Nhân viên";
-			this.MaNV.MinimumWidth = 8;
-			this.MaNV.Name = "MaNV";
-			this.MaNV.Width = 109;
-			// 
-			// MaKH
-			// 
-			this.MaKH.DataPropertyName = "MaKH";
-			this.MaKH.HeaderText = "Mã Khách hàng";
-			this.MaKH.MinimumWidth = 8;
-			this.MaKH.Name = "MaKH";
-			this.MaKH.Width = 118;
-			// 
-			// NgayDat
-			// 
-			this.NgayDat.DataPropertyName = "NgayDat";
-			this.NgayDat.HeaderText = "Ngày Đặt";
-			this.NgayDat.MinimumWidth = 8;
-			this.NgayDat.Name = "NgayDat";
-			this.NgayDat.Width = 85;
-			// 
-			// NgayNhan
-			// 
-			this.NgayNhan.DataPropertyName = "NgayNhan";
-			this.NgayNhan.HeaderText = "Ngày nhận";
-			this.NgayNhan.MinimumWidth = 8;
-			this.NgayNhan.Name = "NgayNhan";
-			this.NgayNhan.Width = 93;
-			// 
-			// NgayTra
-			// 
-			this.NgayTra.DataPropertyName = "NgayTra";
-			this.NgayTra.HeaderText = "NgayTra";
-			this.NgayTra.MinimumWidth = 8;
-			this.NgayTra.Name = "NgayTra";
-			this.NgayTra.Width = 90;
-			// 
-			// TrangThai
-			// 
-			this.TrangThai.DataPropertyName = "TrangThai";
-			this.TrangThai.HeaderText = "Trạng thái";
-			this.TrangThai.MinimumWidth = 8;
-			this.TrangThai.Name = "TrangThai";
-			this.TrangThai.Width = 89;
-			// 
-			// ThanhTien
-			// 
-			this.ThanhTien.DataPropertyName = "Thành Tiền";
-			this.ThanhTien.HeaderText = "Thành tiền";
-			this.ThanhTien.MinimumWidth = 8;
-			this.ThanhTien.Name = "ThanhTien";
-			this.ThanhTien.Width = 91;
 			// 
 			// bangHoaDonPhong
 			// 

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(bangMon));
 			this.inputFind = new System.Windows.Forms.TextBox();
 			this.label4 = new System.Windows.Forms.Label();
@@ -36,6 +37,10 @@
 			this.textTenMon = new System.Windows.Forms.TextBox();
 			this.label2 = new System.Windows.Forms.Label();
 			this.dataGridViewMon = new System.Windows.Forms.DataGridView();
+			this.Ma = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.Ten = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.gia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.TrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.textMaMon = new System.Windows.Forms.TextBox();
 			this.label1 = new System.Windows.Forms.Label();
 			this.back = new System.Windows.Forms.Button();
@@ -45,10 +50,6 @@
 			this.comboTT = new System.Windows.Forms.ComboBox();
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.label14 = new System.Windows.Forms.Label();
-			this.Ma = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.Ten = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.gia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.TrangThai = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridViewMon)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.SuspendLayout();
@@ -122,6 +123,14 @@
 			// 
 			this.dataGridViewMon.AllowUserToOrderColumns = true;
 			this.dataGridViewMon.BackgroundColor = System.Drawing.Color.Ivory;
+			dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+			dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+			dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+			dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+			dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+			dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+			this.dataGridViewMon.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
 			this.dataGridViewMon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dataGridViewMon.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Ma,
@@ -135,6 +144,38 @@
 			this.dataGridViewMon.Size = new System.Drawing.Size(437, 245);
 			this.dataGridViewMon.TabIndex = 16;
 			this.dataGridViewMon.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewMon_CellClick);
+			// 
+			// Ma
+			// 
+			this.Ma.DataPropertyName = "MaMon";
+			this.Ma.HeaderText = "Mã Món";
+			this.Ma.MinimumWidth = 8;
+			this.Ma.Name = "Ma";
+			this.Ma.Width = 80;
+			// 
+			// Ten
+			// 
+			this.Ten.DataPropertyName = "TenMon";
+			this.Ten.HeaderText = "Tên Món";
+			this.Ten.MinimumWidth = 8;
+			this.Ten.Name = "Ten";
+			this.Ten.Width = 150;
+			// 
+			// gia
+			// 
+			this.gia.DataPropertyName = "GiaMon";
+			this.gia.HeaderText = "Giá Món";
+			this.gia.MinimumWidth = 8;
+			this.gia.Name = "gia";
+			this.gia.Width = 70;
+			// 
+			// TrangThai
+			// 
+			this.TrangThai.DataPropertyName = "TrangThai_Mon";
+			this.TrangThai.HeaderText = "Trạng Thái";
+			this.TrangThai.MinimumWidth = 8;
+			this.TrangThai.Name = "TrangThai";
+			this.TrangThai.Width = 150;
 			// 
 			// textMaMon
 			// 
@@ -243,38 +284,6 @@
 			this.label14.Size = new System.Drawing.Size(227, 29);
 			this.label14.TabIndex = 68;
 			this.label14.Text = "DANH SÁCH MÓN";
-			// 
-			// Ma
-			// 
-			this.Ma.DataPropertyName = "MaMon";
-			this.Ma.HeaderText = "Mã Món";
-			this.Ma.MinimumWidth = 8;
-			this.Ma.Name = "Ma";
-			this.Ma.Width = 80;
-			// 
-			// Ten
-			// 
-			this.Ten.DataPropertyName = "TenMon";
-			this.Ten.HeaderText = "Tên Món";
-			this.Ten.MinimumWidth = 8;
-			this.Ten.Name = "Ten";
-			this.Ten.Width = 150;
-			// 
-			// gia
-			// 
-			this.gia.DataPropertyName = "GiaMon";
-			this.gia.HeaderText = "Giá Món";
-			this.gia.MinimumWidth = 8;
-			this.gia.Name = "gia";
-			this.gia.Width = 70;
-			// 
-			// TrangThai
-			// 
-			this.TrangThai.DataPropertyName = "TrangThai_Mon";
-			this.TrangThai.HeaderText = "Trạng Thái";
-			this.TrangThai.MinimumWidth = 8;
-			this.TrangThai.Name = "TrangThai";
-			this.TrangThai.Width = 150;
 			// 
 			// bangMon
 			// 

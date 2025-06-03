@@ -41,20 +41,29 @@ namespace HotelManagement.GUII
 		{
 			int index = e.RowIndex;
 
-			Console.WriteLine($"RowIndex: {index}, Total Rows: {bangPhong.Rows.Count}");
-
+			// Kiểm tra chỉ số hàng hợp lệ
 			if (index < 0 || index >= bangPhong.Rows.Count || bangPhong.Rows[index].IsNewRow)
 				return;
 
-			inputMaP.Text = bangPhong.Rows[index].Cells["MaP"].Value?.ToString() ?? string.Empty;
-			inputMaLP.Text = bangPhong.Rows[index].Cells["MaLP"].Value?.ToString() ?? string.Empty;
-			inputTenLP.Text = bangPhong.Rows[index].Cells["TenLP"].Value?.ToString() ?? string.Empty;
-			inputGiaMacDinh.Text = bangPhong.Rows[index].Cells["GiaMacDinh"].Value?.ToString() ?? string.Empty;
-			comboTT.Text = bangPhong.Rows[index].Cells["TrangThai"].Value?.ToString() ?? string.Empty;
-			cbSoGiuong.Text = bangPhong.Rows[index].Cells["SoGiuong"].Value?.ToString() ?? string.Empty;
-			cbSucChua.Text = bangPhong.Rows[index].Cells["SucChua"].Value?.ToString() ?? string.Empty;
-			inputTienNghi.Text = bangPhong.Rows[index].Cells["TienNghi"].Value?.ToString() ?? string.Empty;
-			inputDienTich.Text = bangPhong.Rows[index].Cells["DienTich"].Value?.ToString() ?? string.Empty;
+			Console.WriteLine($"RowIndex: {index}, Total Rows: {bangPhong.Rows.Count}");
+
+			// Lấy giá trị từ các ô và gán vào các input
+			try
+			{
+				inputMaP.Text = bangPhong.Rows[index].Cells["MaP"].Value?.ToString() ?? string.Empty;
+				inputMaLP.Text = bangPhong.Rows[index].Cells["MaLP"].Value?.ToString() ?? string.Empty;
+				inputTenLP.Text = bangPhong.Rows[index].Cells["TenLP"].Value?.ToString() ?? string.Empty;
+				inputGiaMacDinh.Text = bangPhong.Rows[index].Cells["GiaMacDinh"].Value?.ToString() ?? string.Empty;
+				comboTT.Text = bangPhong.Rows[index].Cells["TrangThai"].Value?.ToString() ?? string.Empty;
+				cbSoGiuong.Text = bangPhong.Rows[index].Cells["SoGiuong"].Value?.ToString() ?? string.Empty;
+				cbSucChua.Text = bangPhong.Rows[index].Cells["SucChua"].Value?.ToString() ?? string.Empty;
+				inputTienNghi.Text = bangPhong.Rows[index].Cells["TienNghi"].Value?.ToString() ?? string.Empty;
+				inputDienTich.Text = bangPhong.Rows[index].Cells["DienTich"].Value?.ToString() ?? string.Empty;
+			}
+			catch (Exception ex)
+			{
+				Console.WriteLine($"Error: {ex.Message}");
+			}
 		}
 
 		//Kiểm tra nhập 
