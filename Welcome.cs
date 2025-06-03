@@ -24,10 +24,9 @@ namespace HotelManagement
 		private void next_Click(object sender, EventArgs e)
 		{
 			this.Hide();
-			//var login = new Login();
-			//login.ShowDialog();
-			var dashboard = new Dashboard();
-			dashboard.ShowDialog();
+			var login = new Login();
+			login.ShowDialog();
+
 		}
 	}
 }

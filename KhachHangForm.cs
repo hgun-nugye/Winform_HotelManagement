@@ -97,20 +97,7 @@ namespace HotelManagement
 				textEmail_KH.Focus();
 				return false;
 			}
-
-			if (string.IsNullOrEmpty(textDiaChi.Text))
-			{
-				MessageBox.Show("Chưa nhập Địa chỉ", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-				textDiaChi.Focus();
-				return false;
-			}
-
-			if (string.IsNullOrEmpty(textQuocTich.Text))
-			{
-				MessageBox.Show("Chưa nhập Quốc tịch", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-				textQuocTich.Focus();
-				return false;
-			}
+					
 			return true;
 		}
 

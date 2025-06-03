@@ -306,7 +306,7 @@
                             <TextRun>
                               <Value>=Fields!NgayXuatHD.Value</Value>
                               <Style>
-                                <Format>MM/dd/yyyy</Format>
+                                <Format>d MMM yyyy</Format>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -337,7 +337,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!TongTien.Value</Value>
-                              <Style />
+                              <Style>
+                                <Format>#,0 'VND';(#,0 'VND');'(None)'</Format>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -412,7 +414,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Sum(Fields!TongTien.Value)</Value>
-                              <Style />
+                              <Style>
+                                <Format>#,0 'VND';(#,0 'VND')</Format>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -430,6 +434,7 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
               </TablixCells>
@@ -460,7 +465,7 @@
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
         <Top>0.88in</Top>
-        <Left>0.63in</Left>
+        <Left>0.455in</Left>
         <Height>0.73622in</Height>
         <Width>5.25in</Width>
         <Style>

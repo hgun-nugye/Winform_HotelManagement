@@ -51,7 +51,9 @@ namespace HotelManagement.DAO
 
                 // Exu
                 cmd.ExecuteNonQuery();
-                con.Close();
+                MessageBox.Show("Thêm dịch vụ thành công !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+				// Đóng kết nối
+				con.Close();
             }
             catch (Exception ex)
             {
@@ -75,7 +77,8 @@ namespace HotelManagement.DAO
                 cmd.Parameters.Add("@Loai_DV", SqlDbType.NVarChar).Value = dv.Loai_DV;
                 // Exu
                 cmd.ExecuteNonQuery();
-                con.Close();
+                MessageBox.Show("Cập nhật dịch vụ thành công !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+				con.Close();
             }
             catch (Exception ex)
             {

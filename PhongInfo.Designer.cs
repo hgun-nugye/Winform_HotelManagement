@@ -93,9 +93,9 @@
 			this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label5.Location = new System.Drawing.Point(38, 304);
 			this.label5.Name = "label5";
-			this.label5.Size = new System.Drawing.Size(143, 20);
+			this.label5.Size = new System.Drawing.Size(94, 20);
 			this.label5.TabIndex = 5;
-			this.label5.Text = "Tổng tiền phòng";
+			this.label5.Text = "Giá phòng";
 			// 
 			// textMaHD
 			// 

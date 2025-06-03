@@ -283,7 +283,7 @@
     <value>3, 2, 3, 2</value>
   </data>
   <data name="dataGridViewNV.Size" type="System.Drawing.Size, System.Drawing">
-    <value>973, 206</value>
+    <value>973, 289</value>
   </data>
   <data name="dataGridViewNV.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -302,6 +302,9 @@
   </data>
   <data name="insert.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 10pt, style=Bold</value>
+  </data>
+  <data name="insert.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="insert.Location" type="System.Drawing.Point, System.Drawing">
     <value>66, 414</value>
@@ -332,6 +335,9 @@
   </data>
   <data name="delete.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 10pt, style=Bold</value>
+  </data>
+  <data name="delete.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="delete.Location" type="System.Drawing.Point, System.Drawing">
     <value>174, 414</value>
@@ -720,8 +726,11 @@
   <data name="&gt;&gt;label12.ZOrder" xml:space="preserve">
     <value>20</value>
   </data>
+  <data name="textMaNV.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
   <data name="textMaNV.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 7.8pt</value>
+    <value>Microsoft Sans Serif, 10.2pt</value>
   </data>
   <data name="textMaNV.Location" type="System.Drawing.Point, System.Drawing">
     <value>194, 70</value>
@@ -733,7 +742,7 @@
     <value>True</value>
   </data>
   <data name="textMaNV.Size" type="System.Drawing.Size, System.Drawing">
-    <value>253, 26</value>
+    <value>255, 35</value>
   </data>
   <data name="textMaNV.TabIndex" type="System.Int32, mscorlib">
     <value>16</value>
@@ -750,8 +759,11 @@
   <data name="&gt;&gt;textMaNV.ZOrder" xml:space="preserve">
     <value>19</value>
   </data>
+  <data name="textCCCD.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
   <data name="textCCCD.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 7.8pt</value>
+    <value>Microsoft Sans Serif, 10.2pt</value>
   </data>
   <data name="textCCCD.Location" type="System.Drawing.Point, System.Drawing">
     <value>194, 119</value>
@@ -763,7 +775,7 @@
     <value>True</value>
   </data>
   <data name="textCCCD.Size" type="System.Drawing.Size, System.Drawing">
-    <value>253, 26</value>
+    <value>255, 35</value>
   </data>
   <data name="textCCCD.TabIndex" type="System.Int32, mscorlib">
     <value>17</value>
@@ -780,8 +792,11 @@
   <data name="&gt;&gt;textCCCD.ZOrder" xml:space="preserve">
     <value>18</value>
   </data>
+  <data name="textHoTen.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
   <data name="textHoTen.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 7.8pt</value>
+    <value>Microsoft Sans Serif, 10.2pt</value>
   </data>
   <data name="textHoTen.Location" type="System.Drawing.Point, System.Drawing">
     <value>194, 173</value>
@@ -793,7 +808,7 @@
     <value>True</value>
   </data>
   <data name="textHoTen.Size" type="System.Drawing.Size, System.Drawing">
-    <value>253, 26</value>
+    <value>255, 35</value>
   </data>
   <data name="textHoTen.TabIndex" type="System.Int32, mscorlib">
     <value>18</value>
@@ -810,8 +825,11 @@
   <data name="&gt;&gt;textHoTen.ZOrder" xml:space="preserve">
     <value>17</value>
   </data>
+  <data name="textChucVu.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
   <data name="textChucVu.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 7.8pt</value>
+    <value>Microsoft Sans Serif, 10.2pt</value>
   </data>
   <data name="textChucVu.Location" type="System.Drawing.Point, System.Drawing">
     <value>191, 330</value>
@@ -823,7 +841,7 @@
     <value>True</value>
   </data>
   <data name="textChucVu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>253, 26</value>
+    <value>255, 35</value>
   </data>
   <data name="textChucVu.TabIndex" type="System.Int32, mscorlib">
     <value>21</value>
@@ -840,8 +858,11 @@
   <data name="&gt;&gt;textChucVu.ZOrder" xml:space="preserve">
     <value>16</value>
   </data>
+  <data name="textSDT.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
   <data name="textSDT.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 7.8pt</value>
+    <value>Microsoft Sans Serif, 10.2pt</value>
   </data>
   <data name="textSDT.Location" type="System.Drawing.Point, System.Drawing">
     <value>675, 70</value>
@@ -853,7 +874,7 @@
     <value>True</value>
   </data>
   <data name="textSDT.Size" type="System.Drawing.Size, System.Drawing">
-    <value>364, 26</value>
+    <value>366, 35</value>
   </data>
   <data name="textSDT.TabIndex" type="System.Int32, mscorlib">
     <value>22</value>
@@ -870,8 +891,11 @@
   <data name="&gt;&gt;textSDT.ZOrder" xml:space="preserve">
     <value>15</value>
   </data>
+  <data name="textEmail.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
   <data name="textEmail.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 7.8pt</value>
+    <value>Microsoft Sans Serif, 10.2pt</value>
   </data>
   <data name="textEmail.Location" type="System.Drawing.Point, System.Drawing">
     <value>675, 112</value>
@@ -883,7 +907,7 @@
     <value>True</value>
   </data>
   <data name="textEmail.Size" type="System.Drawing.Size, System.Drawing">
-    <value>364, 26</value>
+    <value>366, 35</value>
   </data>
   <data name="textEmail.TabIndex" type="System.Int32, mscorlib">
     <value>23</value>
@@ -900,8 +924,11 @@
   <data name="&gt;&gt;textEmail.ZOrder" xml:space="preserve">
     <value>14</value>
   </data>
+  <data name="textDiaChi.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
   <data name="textDiaChi.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 7.8pt</value>
+    <value>Microsoft Sans Serif, 10.2pt</value>
   </data>
   <data name="textDiaChi.Location" type="System.Drawing.Point, System.Drawing">
     <value>675, 154</value>
@@ -913,7 +940,7 @@
     <value>True</value>
   </data>
   <data name="textDiaChi.Size" type="System.Drawing.Size, System.Drawing">
-    <value>364, 26</value>
+    <value>366, 35</value>
   </data>
   <data name="textDiaChi.TabIndex" type="System.Int32, mscorlib">
     <value>24</value>
@@ -930,8 +957,11 @@
   <data name="&gt;&gt;textDiaChi.ZOrder" xml:space="preserve">
     <value>13</value>
   </data>
+  <data name="textSoBHYT.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
   <data name="textSoBHYT.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 7.8pt</value>
+    <value>Microsoft Sans Serif, 10.2pt</value>
   </data>
   <data name="textSoBHYT.Location" type="System.Drawing.Point, System.Drawing">
     <value>675, 199</value>
@@ -943,7 +973,7 @@
     <value>True</value>
   </data>
   <data name="textSoBHYT.Size" type="System.Drawing.Size, System.Drawing">
-    <value>364, 26</value>
+    <value>366, 35</value>
   </data>
   <data name="textSoBHYT.TabIndex" type="System.Int32, mscorlib">
     <value>25</value>
@@ -960,8 +990,11 @@
   <data name="&gt;&gt;textSoBHYT.ZOrder" xml:space="preserve">
     <value>12</value>
   </data>
+  <data name="textSoHopDong.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
   <data name="textSoHopDong.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 7.8pt</value>
+    <value>Microsoft Sans Serif, 10.2pt</value>
   </data>
   <data name="textSoHopDong.Location" type="System.Drawing.Point, System.Drawing">
     <value>675, 242</value>
@@ -973,7 +1006,7 @@
     <value>True</value>
   </data>
   <data name="textSoHopDong.Size" type="System.Drawing.Size, System.Drawing">
-    <value>364, 26</value>
+    <value>366, 35</value>
   </data>
   <data name="textSoHopDong.TabIndex" type="System.Int32, mscorlib">
     <value>26</value>
@@ -990,8 +1023,11 @@
   <data name="&gt;&gt;textSoHopDong.ZOrder" xml:space="preserve">
     <value>11</value>
   </data>
+  <data name="textNamBatDau.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
   <data name="textNamBatDau.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 7.8pt</value>
+    <value>Microsoft Sans Serif, 10.2pt</value>
   </data>
   <data name="textNamBatDau.Location" type="System.Drawing.Point, System.Drawing">
     <value>675, 286</value>
@@ -1003,7 +1039,7 @@
     <value>True</value>
   </data>
   <data name="textNamBatDau.Size" type="System.Drawing.Size, System.Drawing">
-    <value>364, 26</value>
+    <value>366, 35</value>
   </data>
   <data name="textNamBatDau.TabIndex" type="System.Int32, mscorlib">
     <value>27</value>
@@ -1053,6 +1089,9 @@
   <data name="update.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 10pt, style=Bold</value>
   </data>
+  <data name="update.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="update.Location" type="System.Drawing.Point, System.Drawing">
     <value>287, 414</value>
   </data>
@@ -1093,7 +1132,7 @@
     <value>True</value>
   </data>
   <data name="inputFind.Size" type="System.Drawing.Size, System.Drawing">
-    <value>364, 41</value>
+    <value>364, 40</value>
   </data>
   <data name="inputFind.TabIndex" type="System.Int32, mscorlib">
     <value>30</value>
@@ -1110,8 +1149,11 @@
   <data name="&gt;&gt;inputFind.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
+  <data name="textMST.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
   <data name="textMST.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 7.8pt</value>
+    <value>Microsoft Sans Serif, 10.2pt</value>
   </data>
   <data name="textMST.Location" type="System.Drawing.Point, System.Drawing">
     <value>675, 330</value>
@@ -1123,7 +1165,7 @@
     <value>True</value>
   </data>
   <data name="textMST.Size" type="System.Drawing.Size, System.Drawing">
-    <value>364, 26</value>
+    <value>366, 35</value>
   </data>
   <data name="textMST.TabIndex" type="System.Int32, mscorlib">
     <value>32</value>
@@ -1246,7 +1288,7 @@
     <value>3, 2, 3, 2</value>
   </data>
   <data name="groupGT.Size" type="System.Drawing.Size, System.Drawing">
-    <value>250, 32</value>
+    <value>250, 47</value>
   </data>
   <data name="groupGT.TabIndex" type="System.Int32, mscorlib">
     <value>35</value>
@@ -1265,6 +1307,9 @@
   </data>
   <data name="back.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 10pt, style=Bold</value>
+  </data>
+  <data name="back.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="back.Location" type="System.Drawing.Point, System.Drawing">
     <value>452, 414</value>
@@ -1296,8 +1341,11 @@
   <data name="lichLam.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 10pt, style=Bold</value>
   </data>
+  <data name="lichLam.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="lichLam.Location" type="System.Drawing.Point, System.Drawing">
-    <value>903, 18</value>
+    <value>903, 11</value>
   </data>
   <data name="lichLam.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 2, 3, 2</value>
@@ -1326,8 +1374,11 @@
   <data name="luong.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 10pt, style=Bold</value>
   </data>
+  <data name="luong.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="luong.Location" type="System.Drawing.Point, System.Drawing">
-    <value>703, 18</value>
+    <value>703, 11</value>
   </data>
   <data name="luong.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 2, 3, 2</value>
@@ -1390,10 +1441,13 @@
     <value>9, 16</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1108, 717</value>
+    <value>1110, 795</value>
   </data>
   <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 7.8pt, style=Bold</value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 2, 3, 2</value>

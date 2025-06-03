@@ -25,6 +25,17 @@ namespace HotelManagement.GUII
 		}
 		private void LuongForm_Load(object sender, EventArgs e)
 		{
+			inputTimKiem.Value = DateTime.Now;
+			inputMaNV.Text = null;
+			inputMucLuong.Text = null;
+			inputThuong.Text = null;
+			inputPhat.Text = null;
+			inputThangLuong.Value = DateTime.Now;
+			inputPhuCap.Text = null;
+			inputTimKiem.Value = DateTime.Now;
+			inputTimKiem.MinDate = new DateTime(2020, 1, 1);
+			inputTimKiem.MaxDate = DateTime.Now;
+
 			ShowAllLuong();
 		}
 

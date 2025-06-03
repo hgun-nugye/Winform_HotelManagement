@@ -146,12 +146,10 @@ namespace HotelManagement.DAO
 
 		private void inputFind_MouseEnter(object sender, EventArgs e)
 		{
-			if (inputFind.Text == "Nhập mã món, tên món để tìm")
-			{
-				inputFind.Text = "";
-				inputFind.ForeColor = Color.Black;
-				inputFind.Font = new Font("Arial", 11, FontStyle.Regular);
-			}
+			inputFind.Text = "";
+			inputFind.ForeColor = Color.Black;
+			inputFind.Font = new Font("Arial", 11, FontStyle.Regular);
+
 		}
 
 		private void inputFind_TextChanged(object sender, EventArgs e)

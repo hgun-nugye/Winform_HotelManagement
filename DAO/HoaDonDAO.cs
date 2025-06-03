@@ -18,25 +18,32 @@ namespace HotelManagement.DAO
 
 		public DataTable getAllHoaDon()
 		{
-			string sql = "WITH TongHoaDon AS " +
-				"( SELECT H.MaHD, H.MaKH, H.MaNV, H.NgayXuatHD, H.TrangThai,       " +
-				"SUM( COALESCE(CTM.SL_Mon * M.GiaMon, 0)+" +
-				"COALESCE(CTHDDV.SL_DV * DV.GiaDV, 0)+ " +
-				"COALESCE(DATEDIFF(DAY, CTP.NgayNhan, CTP.NgayTra) * P.GiaMacDinh, 0)) AS TongHoaDon " +
-				"FROM HoaDon H    " +
-				"LEFT JOIN CTHD CTHD ON H.MaHD = CTHD.MaHD    " +
-				"LEFT JOIN CTHDPhong CTP ON CTHD.MaLoaiCTHD = CTP.MaCTHDP    " +
-				"LEFT JOIN CTHDMon CTM ON CTHD.MaLoaiCTHD = CTM.MaCTHDM    " +
-				"LEFT JOIN CTHDDichVu CTHDDV ON H.MaHD = CTHDDV.MaHDDV    " +
-				"LEFT JOIN DichVu DV ON CTHDDV.MaDV = DV.MaDV    " +
-				"LEFT JOIN Mon M ON CTM.MaMon = M.MaMon    " +
-				"LEFT JOIN Phong P ON CTP.MaP = P.MaP   " +
-				"GROUP BY H.MaHD, H.MaKH, H.MaNV, H.NgayXuatHD, H.TrangThai)" +
-				"SELECT MaHD, MaKH, MaNV, NgayXuatHD, TongHoaDon, TrangThai FROM TongHoaDon";
+			string sql = "WITH TongHoaDon AS ( " +
+							" SELECT H.MaHD, H.MaKH, H.MaNV, H.NgayXuatHD, H.TrangThai, " +
+							" FORMAT(SUM(COALESCE(CTM.SL_Mon * M.GiaMon, 0) + " +
+							" COALESCE(CTHDDV.SL_DV * DV.GiaDV, 0) + " +
+							" COALESCE(" +
+							" CASE " +
+							" WHEN DATEDIFF(DAY, CTP.NgayNhan, CTP.NgayTra) = 0 THEN 1 " +
+							" ELSE DATEDIFF(DAY, CTP.NgayNhan, CTP.NgayTra) " +
+							" END * P.GiaMacDinh, 0)), 'N0') AS TongHoaDon " + 
+							" FROM HoaDon H " +
+							" LEFT JOIN CTHD CTHD ON H.MaHD = CTHD.MaHD " +
+							" LEFT JOIN CTHDPhong CTP ON CTHD.MaLoaiCTHD = CTP.MaCTHDP " +
+							" LEFT JOIN CTHDMon CTM ON CTHD.MaLoaiCTHD = CTM.MaCTHDM " +
+							" LEFT JOIN CTHDDichVu CTHDDV ON H.MaHD = CTHDDV.MaHDDV " +
+							" LEFT JOIN DichVu DV ON CTHDDV.MaDV = DV.MaDV " +
+							" LEFT JOIN Mon M ON CTM.MaMon = M.MaMon " +
+							" LEFT JOIN Phong P ON CTP.MaP = P.MaP " +
+							" GROUP BY H.MaHD, H.MaKH, H.MaNV, H.NgayXuatHD, H.TrangThai " +
+							")" +
+							" SELECT MaHD, MaKH, MaNV, NgayXuatHD, TongHoaDon, TrangThai " +
+							" FROM TongHoaDon";
+
 			using (SqlConnection con = dc.GetConnect())
 			{
 				con.Open();
-				da = new SqlDataAdapter(sql, con);
+				SqlDataAdapter da = new SqlDataAdapter(sql, con);
 				DataTable dt = new DataTable();
 				da.Fill(dt);
 				return dt;

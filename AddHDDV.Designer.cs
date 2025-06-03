@@ -43,8 +43,9 @@
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.label14 = new System.Windows.Forms.Label();
 			this.maPhong = new System.Windows.Forms.Button();
-			this.soLuong = new System.Windows.Forms.TextBox();
+			this.soLuong = new System.Windows.Forms.NumericUpDown();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.soLuong)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// label2
@@ -218,12 +219,13 @@
 			// 
 			// soLuong
 			// 
-			this.soLuong.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.soLuong.Location = new System.Drawing.Point(211, 307);
-			this.soLuong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-			this.soLuong.Multiline = true;
+			this.soLuong.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.soLuong.Location = new System.Drawing.Point(212, 304);
+			this.soLuong.Margin = new System.Windows.Forms.Padding(4);
+			this.soLuong.MaximumSize = new System.Drawing.Size(234, 0);
+			this.soLuong.MinimumSize = new System.Drawing.Size(234, 0);
 			this.soLuong.Name = "soLuong";
-			this.soLuong.Size = new System.Drawing.Size(237, 25);
+			this.soLuong.Size = new System.Drawing.Size(234, 27);
 			this.soLuong.TabIndex = 84;
 			// 
 			// AddHDDV
@@ -253,6 +255,7 @@
 			this.Text = "Thêm Hóa đơn Dịch vụ";
 			this.Load += new System.EventHandler(this.AddHDDV_Load);
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.soLuong)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -273,6 +276,6 @@
 		private System.Windows.Forms.PictureBox pictureBox1;
 		private System.Windows.Forms.Label label14;
 		private System.Windows.Forms.Button maPhong;
-		private System.Windows.Forms.TextBox soLuong;
+		private System.Windows.Forms.NumericUpDown soLuong;
 	}
 }

@@ -140,11 +140,6 @@ namespace HotelManagement.GUII
 			{
 				inputNgayLam.Value = ngayLam;
 			}
-			else
-			{
-				inputNgayLam.Value = DateTime.Now;
-				MessageBox.Show("Invalid date format.");
-			}
 		}
 
 		private void back_Click(object sender, EventArgs e)

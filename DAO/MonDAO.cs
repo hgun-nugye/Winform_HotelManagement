@@ -1,11 +1,7 @@
 ﻿using HotelManagement.DTO;
 using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace HotelManagement.DAO
@@ -53,6 +49,7 @@ namespace HotelManagement.DAO
 
 				// Exu
 				cmd.ExecuteNonQuery();
+				MessageBox.Show("Thêm món thành công !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 				con.Close();
 			}
 			catch (Exception ex)
@@ -77,6 +74,7 @@ namespace HotelManagement.DAO
 				cmd.Parameters.Add("@TrangThai_Mon", SqlDbType.NVarChar).Value = mon.TrangThai_Mon;
 				// Exu
 				cmd.ExecuteNonQuery();
+				MessageBox.Show("Cập nhật món thành công !", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 				con.Close();
 			}
 			catch (Exception ex)

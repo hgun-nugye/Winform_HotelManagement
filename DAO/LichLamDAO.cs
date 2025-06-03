@@ -59,17 +59,17 @@ namespace HotelManagement.DAO
 
 		public bool Update(LichLamDTO nv)
 		{
-			string sql = "UPDATE LichLam SET NgayLam = @NgayLam, MaNV = @MaNV, CaLam = @CaLam WHERE MaNV = @MaNV";
+			string sql = "UPDATE LichLam SET NgayLam = @NgayLam, CaLam = @CaLam WHERE MaNV = @MaNV";
 			SqlConnection con = dc.GetConnect();
 			try
 			{
 				cmd = new SqlCommand(sql, con);
 				con.Open();
 				cmd.Parameters.Add("@NgayLam", SqlDbType.Date).Value = nv.NgayLam;
-				cmd.Parameters.Add("@MaNV", SqlDbType.NVarChar).Value = nv.MaNV;
 				cmd.Parameters.Add("@CaLam", SqlDbType.NVarChar).Value = nv.CaLam;
 				// Exu
 				cmd.ExecuteNonQuery();
+				MessageBox.Show("Cập nhật thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 				con.Close();
 			}
 			catch (Exception ex)
@@ -82,16 +82,16 @@ namespace HotelManagement.DAO
 
 		public bool Delete(LichLamDTO nv)
 		{
-			string sql = "DELETE FROM UdDai WHERE MaUD = @MaUD AND NgayLam = @NgayLam";
+			string sql = "DELETE FROM LichLam WHERE CaLam=@CaLam";
 			SqlConnection con = dc.GetConnect();
 			try
 			{
 				cmd = new SqlCommand(sql, con);
 				con.Open();
-				cmd.Parameters.Add("@MaNV", SqlDbType.NVarChar).Value = nv.MaNV;
-				cmd.Parameters.Add("@NgayLam", SqlDbType.Date).Value = nv.NgayLam;
+				cmd.Parameters.Add("@CaLam", SqlDbType.Date).Value = nv.CaLam;
 				// Exu
 				cmd.ExecuteNonQuery();
+				MessageBox.Show("Xóa thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 				con.Close();
 			}
 			catch (Exception ex)

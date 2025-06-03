@@ -175,11 +175,16 @@ namespace HotelManagement
 
 				//show TongTien
 				string tongTienQuery = @"SELECT COALESCE(
-								SUM(DATEDIFF(DAY, ctp.NgayNhan, ctp.NgayTra) * p.GiaMacDinh) +
-								COALESCE(SUM(DV.GiaDV * ctdv.SL_DV), 0) +
-								COALESCE(SUM(M.GiaMon * ctm.SL_Mon), 0),
-								0
-							) AS TotalCost
+											SUM(
+												CASE 
+													WHEN DATEDIFF(DAY, ctp.NgayNhan, ctp.NgayTra) = 0 THEN 1 
+													ELSE DATEDIFF(DAY, ctp.NgayNhan, ctp.NgayTra) 
+												END * p.GiaMacDinh
+											) +
+											COALESCE(SUM(DV.GiaDV * ctdv.SL_DV), 0) +
+											COALESCE(SUM(M.GiaMon * ctm.SL_Mon), 0),
+											0
+										) AS TotalCost
 							FROM CTHDPhong ctp
 							JOIN Phong p ON ctp.MaP = p.MaP
 							LEFT JOIN CTHDDichVu ctdv ON ctp.MaHDP = ctdv.MaHDDV

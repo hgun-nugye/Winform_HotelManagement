@@ -101,7 +101,7 @@ namespace HotelManagement
 				}
 
 				// Update Status of the room to "Đã đặt"
-				string updateRoomStatus = "UPDATE Phong SET TrangThai = N'Đã đặt' WHERE MaP = @maPhong";
+				string updateRoomStatus = "UPDATE Phong SET TrangThai = N'Đang sử dụng' WHERE MaP = @maPhong";
 				using (SqlCommand cmd = new SqlCommand(updateRoomStatus, conn))
 				{
 					cmd.Parameters.AddWithValue("@maPhong", phong);

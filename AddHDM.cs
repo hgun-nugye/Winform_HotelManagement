@@ -204,8 +204,8 @@ namespace HotelManagement
 		private void back_Click(object sender, EventArgs e)
 		{
 			this.Hide();
-			Dashboard dashboard = new Dashboard();
-			dashboard.Show();
+			var phong = new PhongInfo();
+			phong.ShowDialog();
 		}
 
 		private void AddHDM_Load(object sender, EventArgs e)

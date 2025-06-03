@@ -119,6 +119,7 @@
 			// 
 			// inputCaLam
 			// 
+			this.inputCaLam.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.inputCaLam.Location = new System.Drawing.Point(645, 46);
 			this.inputCaLam.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.inputCaLam.Multiline = true;
@@ -128,6 +129,7 @@
 			// 
 			// inputMaNV
 			// 
+			this.inputMaNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.inputMaNV.Location = new System.Drawing.Point(198, 104);
 			this.inputMaNV.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.inputMaNV.Multiline = true;
@@ -167,6 +169,7 @@
 			// 
 			// inputfind
 			// 
+			this.inputfind.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.inputfind.Location = new System.Drawing.Point(647, 104);
 			this.inputfind.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
 			this.inputfind.Multiline = true;

@@ -36,7 +36,7 @@
 			this.reportViewer1.Location = new System.Drawing.Point(-1, 0);
 			this.reportViewer1.Name = "reportViewer1";
 			this.reportViewer1.ServerReport.BearerToken = null;
-			this.reportViewer1.Size = new System.Drawing.Size(771, 602);
+			this.reportViewer1.Size = new System.Drawing.Size(837, 602);
 			this.reportViewer1.TabIndex = 0;
 			// 
 			// DoanhThuReport
@@ -44,7 +44,7 @@
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.Azure;
-			this.ClientSize = new System.Drawing.Size(770, 603);
+			this.ClientSize = new System.Drawing.Size(836, 603);
 			this.Controls.Add(this.reportViewer1);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
 			this.Name = "DoanhThuReport";

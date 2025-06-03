@@ -125,45 +125,30 @@ namespace HotelManagement
 					}
 				}
 
-				int soLuongValue;
-
-				// Insert into CTHDDV
-				//string generatedMaCTHDDV;
-				//string cthdDichVuSql = @"INSERT INTO CTHDDichVu (MaCTHDDV, MaHDDV, MaDV, SL_DV, MaP, NgaySD, TrangThai) 
-				//						VALUES (dbo.GenerateMaCTHDDV(), @maHDDV, @maDichVu, @slDichVu, @maP, @ngaySD, @trangThai)";
-
-				//using (SqlCommand cmd = new SqlCommand(cthdDichVuSql, conn))
-				//{
-				//	cmd.Parameters.AddWithValue("@maHDDV", generatedMaHDDV); // MaHDDV đã được tạo
-				//	cmd.Parameters.AddWithValue("@maDichVu", maDichVu); // Mã dịch vụ
-				if (!int.TryParse(soLuong.Text, out soLuongValue))
+				//int soLuongValue;
+				// Kiểm tra xem có tìm thấy MaDV không trước khi chèn vào CTHDDV
+				string generatedMaCTHDDV= null;
+				if (maDichVu != null)
 				{
-					MessageBox.Show("Số lượng dịch vụ phải là một số hợp lệ.");
-					return;
+
+					// Insert into CTHDDV and retrieve MaCTHDDV
+					string cthdDVSql = @"INSERT INTO CTHDDichVu (MaCTHDDV, MaHDDV, MaDV, SL_DV, MaP, NgaySD, TrangThai) 
+										 OUTPUT INSERTED.MaCTHDDV
+										VALUES (dbo.GenerateMaCTHDDV(), @maHDDV, @maDV, @slDV, @maP, @ngaySD, @trangThai)";
+
+					using (SqlCommand cmd = new SqlCommand(cthdDVSql, conn))
+					{
+						cmd.Parameters.AddWithValue("@maHDDV", generatedMaHDDV); // MaHDDV đã được tạo
+						cmd.Parameters.AddWithValue("@maDV", maDichVu); // Mã DV
+						cmd.Parameters.AddWithValue("@slDV", soLuong.Text); // Số lượng 
+						cmd.Parameters.AddWithValue("@maP", maPhong.Text); // Mã phòng
+						cmd.Parameters.AddWithValue("@ngaySD", ngayDung); // Ngày sử dụng 
+						cmd.Parameters.AddWithValue("@trangThai", comboTT.Text); // Trạng thái
+
+						//generatedMaCTHDDV = (string)cmd.ExecuteScalar(); // Lấy MaCTHDDV
+
+					}
 				}
-				//	cmd.Parameters.AddWithValue("@slDichVu", soLuongValue); // Số lượng dịch vụ
-				//	cmd.Parameters.AddWithValue("@maP", maPhong.Text); // Mã phòng
-				//	cmd.Parameters.AddWithValue("@ngaySD", ngaySD.Text); // Ngày sử dụng dịch vụ
-				//	cmd.Parameters.AddWithValue("@trangThai", comboTT.Text); // Trạng thái
-				//	//generatedMaCTHDDV = (string)cmd.ExecuteScalar(); // Lấy MaCTHDDV bị lỗi gì đấy chưa fix được
-				//	cmd.ExecuteNonQuery();
-
-				//}
-
-				string cthdDichVuSql = @"INSERT INTO CTHDDichVu (MaCTHDDV, MaHDDV, MaDV, SL_DV, MaP, NgaySD, TrangThai) 
-                        VALUES ((SELECT dbo.GenerateMaCTHDDV()), @maHDDV, @maDichVu, @slDichVu, @maP, @ngaySD, @trangThai)";
-
-				using (SqlCommand cmd = new SqlCommand(cthdDichVuSql, conn))
-				{
-					cmd.Parameters.AddWithValue("@maHDDV", generatedMaHDDV);
-					cmd.Parameters.AddWithValue("@maDichVu", maDichVu);
-					cmd.Parameters.AddWithValue("@slDichVu", soLuongValue);
-					cmd.Parameters.AddWithValue("@maP", maPhong.Text);
-					cmd.Parameters.AddWithValue("@ngaySD", DateTime.Parse(ngaySD.Text));
-					cmd.Parameters.AddWithValue("@trangThai", comboTT.Text);
-					cmd.ExecuteNonQuery();
-				}
-
 
 				// Lấy MaHD 
 				string maHDQuery = @"select HoaDon.MaHD from HoaDon join HoaDonPhong on HoaDonPhong.MaKH=HoaDon.MaKH 
@@ -195,28 +180,27 @@ namespace HotelManagement
 					cmd.Parameters.AddWithValue("@maHD", maHD);
 					cmd.Parameters.AddWithValue("@maKH", maKH);
 					cmd.Parameters.AddWithValue("@maLoaiHD", generatedMaHDDV);
-
 					cmd.Parameters.AddWithValue("@trangThai", comboTT.Text);
 
 					cmd.ExecuteNonQuery();
 				}
 
-				// Lấy MaCTHDDV
-				string CTHDDVQuery = @"select CTHDDichVu.MaCTHDDV from CTHDDichVu
-										where CTHDDichVu.MaHDDV=@maHDDV";
+				//// Lấy MaCTHDDV
+				//string CTHDDVQuery = @"select CTHDDichVu.MaCTHDDV from CTHDDichVu
+				//						where CTHDDichVu.MaHDDV=@maHDDV";
 
-				string maCTDV = null;
+				//string maCTDV = null;
 
-				using (SqlCommand cmd = new SqlCommand(CTHDDVQuery, conn))
-				{
-					cmd.Parameters.AddWithValue("@maHDDV", generatedMaHDDV); // tenDichVu là tên dịch vụ bạn đã có
+				//using (SqlCommand cmd = new SqlCommand(CTHDDVQuery, conn))
+				//{
+				//	cmd.Parameters.AddWithValue("@maHDDV", generatedMaHDDV); 
 
-					var result = cmd.ExecuteScalar();
-					if (result != null)
-					{
-						maCTDV = result.ToString(); // Lấy MaCTHDDichVu
-					}
-				}
+				//	var result = cmd.ExecuteScalar();
+				//	if (result != null)
+				//	{
+				//		maCTDV = result.ToString(); // Lấy MaCTHDDichVu
+				//	}
+				//}
 
 				// Insert into CTHoaDon
 				string CTHD = "INSERT INTO CTHD (MaCTHD, MaHD, MaLoaiHD, MaKH, MaLoaiCTHD) VALUES" +
@@ -225,9 +209,9 @@ namespace HotelManagement
 				using (SqlCommand cmd = new SqlCommand(CTHD, conn))
 				{
 					cmd.Parameters.AddWithValue("@maHD", maHD);
-					cmd.Parameters.AddWithValue("@maLoaiHD", generatedMaHDDV); // Use the generated MaHDDV
+					cmd.Parameters.AddWithValue("@maLoaiHD", generatedMaHDDV);
 					cmd.Parameters.AddWithValue("@maKH", maKH);
-					cmd.Parameters.AddWithValue("@maLoaiCTHD", maCTDV);
+					cmd.Parameters.AddWithValue("@maLoaiCTHD", generatedMaCTHDDV);
 
 					cmd.ExecuteNonQuery();
 					MessageBox.Show("Cập nhật thành công!");
@@ -238,8 +222,8 @@ namespace HotelManagement
 		private void back_Click(object sender, EventArgs e)
 		{
 			this.Hide();
-			Dashboard dashboard = new Dashboard();
-			dashboard.Show();
+			var phong = new PhongInfo();
+			phong.ShowDialog();
 		}
 
 		private void AddHDDV_Load(object sender, EventArgs e)

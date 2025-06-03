@@ -1,11 +1,7 @@
 ﻿using HotelManagement.DTO;
 using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace HotelManagement.DAO
@@ -24,7 +20,7 @@ namespace HotelManagement.DAO
 		public DataTable getAllHoaDonMon()
 		{
 			// Tạo lệnh - Mở kết nối - Tạo adap/command - Đổ dữ liệu/ xử lý dữ liệu đầu - đóng cổng
-			string sql = "SELECT  HDMon.MaHDM, MaNV, MaKH, NgayDat,CTHDM.NgaySD,CTHDM.MaP, M.TenMon,CTHDM.SL_Mon, CTHDM.TrangThai, M.GiaMon * CTHDM.SL_Mon AS \"Thành Tiền\"  FROM HoaDonMon HDMon JOIN CTHDMon CTHDM ON HDMon.MaHDM = CTHDM.MaHDM JOIN Mon M ON CTHDM.MaMon = M.MaMon ";
+			string sql = "SELECT  HDMon.MaHDM, MaNV, MaKH, NgayDat,CTHDM.NgaySD,CTHDM.MaP, M.TenMon,CTHDM.SL_Mon, CTHDM.TrangThai,format(M.GiaMon * CTHDM.SL_Mon, 'N0') AS \"Thành Tiền\"  FROM HoaDonMon HDMon JOIN CTHDMon CTHDM ON HDMon.MaHDM = CTHDM.MaHDM JOIN Mon M ON CTHDM.MaMon = M.MaMon ";
 			SqlConnection con = dc.GetConnect();
 			con.Open();
 			da = new SqlDataAdapter(sql, con);
