@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
@@ -39,12 +38,13 @@ namespace HotelManagement
 
 			using (SqlConnection con = dc.GetConnect())
 			{
+				con.Open(); // Open connection
+				 
 				try
 				{
 					using (SqlCommand cmd = new SqlCommand(sql, con))
 					{
 						cmd.Parameters.AddWithValue("@MaP", MaP);
-						con.Open(); // Open connection
 
 						using (SqlDataReader reader = cmd.ExecuteReader())
 						{

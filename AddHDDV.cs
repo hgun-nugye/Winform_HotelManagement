@@ -222,8 +222,10 @@ namespace HotelManagement
 		private void back_Click(object sender, EventArgs e)
 		{
 			this.Hide();
-			var phong = new PhongInfo();
+			string MaP = maPhong.Text; // Lấy mã phòng từ TextBox
+			var phong = new PhongInfo(MaP);
 			phong.ShowDialog();
+
 		}
 
 		private void AddHDDV_Load(object sender, EventArgs e)

@@ -226,6 +226,7 @@
 			this.maPhong.TabIndex = 84;
 			this.maPhong.Text = "Mã phòng";
 			this.maPhong.UseVisualStyleBackColor = false;
+			this.maPhong.Click += new System.EventHandler(this.back_Click);
 			// 
 			// AddHDM
 			// 
